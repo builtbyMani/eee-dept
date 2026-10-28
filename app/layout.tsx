@@ -1,13 +1,14 @@
 import type { Metadata, Viewport } from "next";
-import { Hanken_Grotesk, DM_Mono } from "next/font/google";
+import { Raleway, DM_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
+import ContactModal from "@/components/ui/ContactModal";
 
-const hankenGrotesk = Hanken_Grotesk({
-  variable: "--font-sans",
+const raleway = Raleway({
+  variable: "--font-heading",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["300", "400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -19,22 +20,48 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Department of Electrical & Electronics Engineering — JNTUH UCESTH",
+  title: {
+    default: "Department of Electrical & Electronics Engineering — JNTUH UCESTH",
+    template: "%s | EEE JNTUH",
+  },
   description:
-    "Student engineering projects, formula electric racing, autonomous aerial & ground robotics, MSME research grants, and technical achievements at JNTU Hyderabad.",
+    "Student engineering machines, electric formula racing, autonomous aerial & ground robotics, MSME research grants, and high-voltage electrical engineering at JNTU Hyderabad.",
+  keywords: [
+    "JNTUH EEE",
+    "Department of Electrical and Electronics Engineering",
+    "JNTU Hyderabad",
+    "Formula Bharat EV",
+    "Hexawatts Racing",
+    "AETOS Autonomous Drone",
+    "Autonomous Vehicle DBW",
+    "Planetary Rover IRC",
+    "ISRO Robotics Challenge",
+    "MSME 5.0 Grant",
+  ],
+  authors: [{ name: "Department of EEE, JNTUH UCESTH" }],
   icons: {
     icon: [
-      { url: "/favicon.ico" },
-      { url: "/icon.png", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "192x192" },
+      { url: "/images/jntuh-logo.png", type: "image/png" },
     ],
     apple: [
-      { url: "/icon.png" },
+      { url: "/icon.png", sizes: "180x180", type: "image/png" },
     ],
+  },
+  openGraph: {
+    title: "Department of Electrical & Electronics Engineering — JNTUH UCESTH",
+    description:
+      "Student engineering machines, electric formula racing, autonomous aerial & ground robotics, and research grants at JNTU Hyderabad.",
+    url: "https://eee-dept-jntuh.ac.in",
+    siteName: "EEE Department — JNTUH",
+    type: "website",
+    locale: "en_IN",
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#090909",
+  themeColor: "#7F011F",
   colorScheme: "dark",
   width: "device-width",
   initialScale: 1,
@@ -50,15 +77,16 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${hankenGrotesk.variable} ${dmMono.variable} dark scroll-smooth`}
+      className={`${raleway.variable} ${dmMono.variable} dark scroll-smooth`}
     >
       <body
         suppressHydrationWarning
-        className="min-h-[100dvh] flex flex-col bg-[#090909] text-[#c4c4c4] antialiased selection:bg-[#1f3fff] selection:text-white"
+        className="min-h-[100dvh] flex flex-col bg-[#090909] text-[#E2B6BD] antialiased selection:bg-[#7F011F] selection:text-white max-w-[100vw] overflow-x-hidden font-sans"
       >
         <Navbar />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 w-full max-w-[100vw] overflow-x-hidden">{children}</main>
         <Footer />
+        <ContactModal />
       </body>
     </html>
   );

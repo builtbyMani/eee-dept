@@ -1,10 +1,11 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import WatermarkBackground from "@/components/ui/WatermarkBackground";
 import LeadCard from "@/components/ui/LeadCard";
 import TeamRoster, { TeamMember } from "@/components/ui/TeamRoster";
 
-export const metadata = {
-  title: "Autonomous Vehicle Platform — DBW & Perception | EEE JNTUH",
+export const metadata: Metadata = {
+  title: "Autonomous Vehicle Platform — DBW & Perception",
   description:
     "Student engineering team developing drive-by-wire electric vehicle conversion, ROS2 perception, and LiDAR-guided navigation.",
 };
@@ -43,7 +44,7 @@ const AV_MEMBERS: TeamMember[] = [
 
 export default function AutonomousVehiclePage() {
   return (
-    <div className="relative min-h-[100dvh]">
+    <div className="relative min-h-[100dvh] overflow-x-hidden">
       {/* Background Watermark with the Autonomous Vehicle Schematic */}
       <WatermarkBackground
         imageSrc="/images/av-schematic.svg"
@@ -56,7 +57,7 @@ export default function AutonomousVehiclePage() {
         <div className="mb-10">
           <Link
             href="/#projects"
-            className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#808080] hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#A0828A] hover:text-white transition-colors"
           >
             <span>←</span> Back to Department Projects
           </Link>
@@ -64,21 +65,21 @@ export default function AutonomousVehiclePage() {
 
         {/* Hero Briefing */}
         <div className="max-w-4xl mb-16">
-          <p className="mono-label mb-3 text-[#00e5ff]">
+          <p className="mono-label mb-3 text-[#FF4D6D]">
             Full-Stack Autonomous Mobility
           </p>
-          <h1 className="text-4xl sm:text-6xl font-normal text-white tracking-tighter leading-tight mb-6">
+          <h1 className="text-4xl sm:text-6xl font-normal text-white font-heading tracking-tight leading-tight mb-6">
             Autonomous Vehicle <br />
             Development Platform
           </h1>
-          <p className="text-lg sm:text-xl text-[#c4c4c4] leading-relaxed mb-4">
+          <p className="text-lg sm:text-xl text-[#E2B6BD] leading-relaxed mb-4">
             <span className="text-white">
               Converting utility chassis into an intelligent, drive-by-wire testbed.
             </span>{" "}
             The team designs and tests real-time perception, localization, and trajectory
             planning algorithms to achieve level-dependent autonomous navigation in structured campus environments.
           </p>
-          <p className="text-sm sm:text-base text-[#808080] leading-relaxed">
+          <p className="text-sm sm:text-base text-[#A0828A] leading-relaxed">
             By replacing mechanical steering and braking links with CAN-bus electronic actuators
             and integrating 360-degree LiDAR and stereo vision, the team creates an accessible,
             scalable platform for real-world autonomous robotics research.
@@ -86,40 +87,34 @@ export default function AutonomousVehiclePage() {
         </div>
 
         {/* Technical Specs Strip */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 glass-card mb-20">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 glass-card border-[#2D141A] mb-20">
           <div>
-            <p className="font-mono text-[11px] text-[#808080] uppercase">Framework</p>
+            <p className="font-mono text-[11px] text-[#A0828A] uppercase">Framework</p>
             <p className="text-base font-medium text-white mt-1">ROS2 Humble / Iron</p>
           </div>
           <div>
-            <p className="font-mono text-[11px] text-[#808080] uppercase">Actuation Stack</p>
-            <p className="text-base font-medium text-[#00e5ff] mt-1">CAN-Bus Drive-by-Wire</p>
+            <p className="font-mono text-[11px] text-[#A0828A] uppercase">Actuation Stack</p>
+            <p className="text-base font-medium text-[#FF4D6D] mt-1">CAN-Bus Drive-by-Wire</p>
           </div>
           <div>
-            <p className="font-mono text-[11px] text-[#808080] uppercase">Perception Rig</p>
+            <p className="font-mono text-[11px] text-[#A0828A] uppercase">Perception Rig</p>
             <p className="text-base font-medium text-white mt-1">3D LiDAR + Stereo Cameras</p>
           </div>
           <div>
-            <p className="font-mono text-[11px] text-[#808080] uppercase">Core Team Strength</p>
-            <p className="text-base font-medium text-[#f5a623] mt-1">8 Engineers</p>
+            <p className="font-mono text-[11px] text-[#A0828A] uppercase">Safety Layer</p>
+            <p className="text-base font-medium text-[#FF4D6D] mt-1">Hardwired E-Stop Relay</p>
           </div>
         </div>
 
-        {/* Team Leadership Section */}
+        {/* Project Leadership Section */}
         <div className="mb-20">
-          <div className="flex items-center justify-between mb-8 pb-4 border-b border-[#262626]">
-            <div>
-              <p className="mono-label text-[#f5a623]">Team Leadership</p>
-              <h2 className="text-2xl sm:text-3xl font-normal text-white mt-1">
-                Project Lead
-              </h2>
-            </div>
-            <span className="font-mono text-xs text-[#808080]">
-              VERIFIED APPOINTMENT
-            </span>
+          <div className="mb-8">
+            <p className="mono-label mb-2 text-[#FF4D6D]">Autonomy &amp; Embedded Lead</p>
+            <h2 className="text-2xl sm:text-4xl font-normal text-white font-heading tracking-tight">
+              Project Leadership
+            </h2>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl">
+          <div className="max-w-xl">
             {AV_LEADS.map((lead) => (
               <LeadCard key={lead.name} {...lead} />
             ))}
@@ -128,19 +123,13 @@ export default function AutonomousVehiclePage() {
 
         {/* Full Team Roster */}
         <div>
-          <div className="flex items-center justify-between mb-8 pb-4 border-b border-[#262626]">
-            <div>
-              <p className="mono-label text-[#808080]">Engineering Specialists</p>
-              <h2 className="text-2xl sm:text-3xl font-normal text-white mt-1">
-                Core Engineering Team
-              </h2>
-            </div>
-            <span className="font-mono text-xs text-[#00e5ff]">
-              7 SPECIALISTS
-            </span>
+          <div className="mb-8">
+            <p className="mono-label mb-2 text-[#A0828A]">Perception &amp; Controls Engineering</p>
+            <h2 className="text-2xl sm:text-4xl font-normal text-white font-heading tracking-tight">
+              Team Roster &amp; Subsystems
+            </h2>
           </div>
-
-          <TeamRoster members={AV_MEMBERS} domainName="Autonomous Vehicles" />
+          <TeamRoster members={AV_MEMBERS} />
         </div>
       </div>
     </div>

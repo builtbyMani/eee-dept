@@ -31,15 +31,15 @@ export default function AchievementCard({
       transition={tactileSpring}
       className={`p-6 border transition-all flex flex-col justify-between ${
         featured
-          ? "border-[#f5a623]/40 bg-[#141209]/80 shadow-[0_0_40px_rgba(245,166,35,0.06)]"
-          : "border-[#262626] bg-[#0d0d0d] hover:border-[#383838]"
+          ? "border-[#7F011F]/60 bg-[#14080B]/90 shadow-[0_0_40px_rgba(127,1,31,0.2)]"
+          : "border-[#2D141A] bg-[#0E0608] hover:border-[#7F011F]"
       }`}
     >
       <div>
         {/* Top Header: Category & Date */}
         <div className="flex items-center justify-between text-xs font-mono uppercase tracking-wider mb-3">
-          <span className="text-[#808080]">{category}</span>
-          <span className="text-[#808080]">{date}</span>
+          <span className="text-[#A0828A]">{category}</span>
+          <span className="text-[#A0828A]">{date}</span>
         </div>
 
         {/* Big Result Badge */}
@@ -47,8 +47,8 @@ export default function AchievementCard({
           <span
             className={`inline-block font-mono text-xs uppercase tracking-wider px-2.5 py-1 border ${
               featured
-                ? "bg-[#f5a623]/10 border-[#f5a623]/40 text-[#f5a623] font-medium"
-                : "bg-white/5 border-white/20 text-white"
+                ? "bg-[#7F011F]/20 border-[#7F011F]/50 text-[#FF4D6D] font-medium"
+                : "bg-white/5 border-white/20 text-[#E2B6BD]"
             }`}
           >
             {resultBadge}
@@ -56,25 +56,25 @@ export default function AchievementCard({
         </div>
 
         {/* Title & Students */}
-        <h4 className="text-lg sm:text-xl font-normal text-white mb-2 tracking-tight">
+        <h4 className="text-lg sm:text-xl font-normal text-white mb-2 tracking-tight font-heading">
           {title}
         </h4>
-        <p className="text-xs font-mono text-[#00e5ff] mb-3">{names}</p>
+        <p className="text-xs font-mono text-[#E2B6BD] mb-3">{names}</p>
 
         {/* Summary Description */}
-        <p className="text-xs sm:text-sm text-[#808080] leading-relaxed mb-6">
+        <p className="text-xs sm:text-sm text-[#A0828A] leading-relaxed mb-6">
           {context}
         </p>
       </div>
 
       {/* Link or LinkedIn indicator */}
       {link ? (
-        <div className="pt-4 border-t border-[#1f1f1f] flex items-center justify-between text-xs font-mono text-[#c4c4c4] hover:text-white transition-colors">
+        <div className="pt-4 border-t border-[#2D141A] flex items-center justify-between text-xs font-mono text-[#E2B6BD] hover:text-white transition-colors">
           <span>View on LinkedIn</span>
-          <span>↗</span>
+          <span className="text-[#FF4D6D]">↗</span>
         </div>
       ) : (
-        <div className="pt-4 border-t border-[#1f1f1f] text-[11px] font-mono text-[#525252]">
+        <div className="pt-4 border-t border-[#2D141A] text-[11px] font-mono text-[#6B4E54]">
           VERIFIED DEPARTMENT RECORD
         </div>
       )}

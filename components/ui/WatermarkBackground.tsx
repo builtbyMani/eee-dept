@@ -17,15 +17,15 @@ export default function WatermarkBackground({
 }: WatermarkBackgroundProps) {
   return (
     <div
-      className="pointer-events-none absolute inset-0 overflow-hidden select-none z-0 flex items-center justify-center"
+      className="pointer-events-none absolute inset-0 overflow-hidden select-none z-0 flex items-center justify-center max-w-[100vw]"
       aria-hidden="true"
     >
       {/* Background Subtle Grid Texture */}
       <div
-        className="absolute inset-0 opacity-[0.25]"
+        className="absolute inset-0 opacity-[0.22]"
         style={{
           backgroundImage:
-            "linear-gradient(to right, #262626 1px, transparent 1px), linear-gradient(to bottom, #262626 1px, transparent 1px)",
+            "linear-gradient(to right, #2D141A 1px, transparent 1px), linear-gradient(to bottom, #2D141A 1px, transparent 1px)",
           backgroundSize: "40px 40px",
         }}
       />
@@ -46,7 +46,7 @@ export default function WatermarkBackground({
           fill
           priority
           sizes="(max-width: 1200px) 90vw, 850px"
-          className="object-contain filter grayscale contrast-125 brightness-110 drop-shadow-[0_0_80px_rgba(31,63,255,0.15)]"
+          className="object-contain filter grayscale contrast-125 brightness-110 drop-shadow-[0_0_80px_rgba(127,1,31,0.25)]"
         />
       </motion.div>
     </div>

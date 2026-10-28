@@ -35,25 +35,25 @@ export default function Accordion() {
   };
 
   return (
-    <div className="border-t border-[#262626]">
+    <div className="border-t border-[#2D141A]">
       {STEPS.map((step, idx) => {
         const isOpen = openIndex === idx;
         return (
-          <div key={step.num} className="border-b border-[#262626]">
+          <div key={step.num} className="border-b border-[#2D141A]">
             <button
               onClick={() => toggle(idx)}
               aria-expanded={isOpen}
               className="w-full py-6 flex items-center justify-between text-left group cursor-pointer"
             >
               <div className="flex items-center gap-6 sm:gap-12">
-                <span className="font-mono text-sm sm:text-base text-[#808080]">
+                <span className="font-mono text-sm sm:text-base text-[#A0828A]">
                   {step.num}
                 </span>
-                <span className="text-xl sm:text-2xl font-normal text-white group-hover:text-[#00e5ff] transition-colors">
+                <span className="text-xl sm:text-2xl font-normal text-white group-hover:text-[#FF4D6D] transition-colors font-heading">
                   {step.title}
                 </span>
               </div>
-              <span className="font-mono text-2xl text-[#808080] group-hover:text-white transition-colors">
+              <span className="font-mono text-2xl text-[#A0828A] group-hover:text-[#FF4D6D] transition-colors">
                 {isOpen ? "–" : "+"}
               </span>
             </button>
@@ -66,7 +66,7 @@ export default function Accordion() {
                   transition={settleSpring}
                   className="overflow-hidden"
                 >
-                  <p className="pb-6 pl-12 sm:pl-20 max-w-3xl text-sm sm:text-base text-[#808080] leading-relaxed">
+                  <p className="pb-6 pl-12 sm:pl-20 max-w-3xl text-sm sm:text-base text-[#A0828A] leading-relaxed">
                     {step.body}
                   </p>
                 </motion.div>

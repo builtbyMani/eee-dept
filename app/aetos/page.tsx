@@ -1,10 +1,11 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import WatermarkBackground from "@/components/ui/WatermarkBackground";
 import LeadCard from "@/components/ui/LeadCard";
 import TeamRoster, { TeamMember } from "@/components/ui/TeamRoster";
 
-export const metadata = {
-  title: "AËTOS (Αετός) — GNSS-Denied Autonomous Drone | EEE JNTUH",
+export const metadata: Metadata = {
+  title: "AËTOS (ΑΕΤΟΣ) — GNSS-Denied Autonomous Drone",
   description:
     "Student aerial robotics team engineering autonomous visual-inertial drones for ISRO IROC-U in GPS-denied environments.",
 };
@@ -54,7 +55,7 @@ const AETOS_MEMBERS: TeamMember[] = [
 
 export default function AetosPage() {
   return (
-    <div className="relative min-h-[100dvh]">
+    <div className="relative min-h-[100dvh] overflow-x-hidden">
       {/* Background Watermark with the AËTOS Eagle Logo */}
       <WatermarkBackground
         imageSrc="/images/aetos-logo.jpg"
@@ -67,7 +68,7 @@ export default function AetosPage() {
         <div className="mb-10">
           <Link
             href="/#projects"
-            className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#808080] hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#A0828A] hover:text-white transition-colors"
           >
             <span>←</span> Back to Department Projects
           </Link>
@@ -75,21 +76,21 @@ export default function AetosPage() {
 
         {/* Hero Briefing */}
         <div className="max-w-4xl mb-16">
-          <p className="mono-label mb-3 text-[#00e5ff]">
+          <p className="mono-label mb-3 text-[#FF4D6D]">
             ISRO Robotics Challenge — URSC (IROC-U)
           </p>
-          <h1 className="text-4xl sm:text-6xl font-normal text-white tracking-tighter leading-tight mb-6">
+          <h1 className="text-4xl sm:text-6xl font-normal text-white font-heading tracking-tight leading-tight mb-6">
             AËTOS (ΑΕΤΟΣ) <br />
             Autonomous Drone Team
           </h1>
-          <p className="text-lg sm:text-xl text-[#c4c4c4] leading-relaxed mb-4">
+          <p className="text-lg sm:text-xl text-[#E2B6BD] leading-relaxed mb-4">
             <span className="text-white">
               Following the successful design and flight testing of their first custom UAV,
             </span>{" "}
             Team AËTOS is now engineering a next-generation GNSS-denied autonomous aerial vehicle
             specifically designed for ISRO&apos;s IROC-U competition.
           </p>
-          <p className="text-sm sm:text-base text-[#808080] leading-relaxed">
+          <p className="text-sm sm:text-base text-[#A0828A] leading-relaxed">
             Operating in GPS-denied environments requires zero reliance on satellite positioning.
             The vehicle localizes itself using visual-inertial odometry (VIO), high-rate optical flow,
             and 2D/3D LiDAR SLAM, executing real-time obstacle avoidance and precision landing
@@ -98,40 +99,34 @@ export default function AetosPage() {
         </div>
 
         {/* Technical Specs Strip */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 glass-card mb-20">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 glass-card border-[#2D141A] mb-20">
           <div>
-            <p className="font-mono text-[11px] text-[#808080] uppercase">Target Competition</p>
-            <p className="text-base font-medium text-white mt-1">ISRO IROC-U</p>
+            <p className="font-mono text-[11px] text-[#A0828A] uppercase">Navigation Paradigm</p>
+            <p className="text-base font-medium text-white mt-1">GNSS-Denied VIO</p>
           </div>
           <div>
-            <p className="font-mono text-[11px] text-[#808080] uppercase">Autonomy Level</p>
-            <p className="text-base font-medium text-[#00e5ff] mt-1">GNSS-Denied VIO</p>
+            <p className="font-mono text-[11px] text-[#A0828A] uppercase">Target Competition</p>
+            <p className="text-base font-medium text-[#FF4D6D] mt-1">ISRO IROC-U</p>
           </div>
           <div>
-            <p className="font-mono text-[11px] text-[#808080] uppercase">Compute Subsystem</p>
-            <p className="text-base font-medium text-white mt-1">Companion SBC + PX4</p>
+            <p className="font-mono text-[11px] text-[#A0828A] uppercase">Compute Payload</p>
+            <p className="text-base font-medium text-white mt-1">NVIDIA Jetson / PX4</p>
           </div>
           <div>
-            <p className="font-mono text-[11px] text-[#808080] uppercase">Core Team Strength</p>
-            <p className="text-base font-medium text-[#f5a623] mt-1">13 Engineers</p>
+            <p className="font-mono text-[11px] text-[#A0828A] uppercase">Airframe Class</p>
+            <p className="text-base font-medium text-[#FF4D6D] mt-1">Custom Carbon Quad</p>
           </div>
         </div>
 
-        {/* Team Leadership Section */}
+        {/* Project Leadership Section */}
         <div className="mb-20">
-          <div className="flex items-center justify-between mb-8 pb-4 border-b border-[#262626]">
-            <div>
-              <p className="mono-label text-[#f5a623]">Team Leadership</p>
-              <h2 className="text-2xl sm:text-3xl font-normal text-white mt-1">
-                Leads &amp; System Architects
-              </h2>
-            </div>
-            <span className="hidden sm:inline font-mono text-xs text-[#808080]">
-              VERIFIED APPOINTMENT
-            </span>
+          <div className="mb-8">
+            <p className="mono-label mb-2 text-[#FF4D6D]">Avionics &amp; Systems Leads</p>
+            <h2 className="text-2xl sm:text-4xl font-normal text-white font-heading tracking-tight">
+              Project Leadership
+            </h2>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {AETOS_LEADS.map((lead) => (
               <LeadCard key={lead.name} {...lead} />
             ))}
@@ -140,19 +135,13 @@ export default function AetosPage() {
 
         {/* Full Team Roster */}
         <div>
-          <div className="flex items-center justify-between mb-8 pb-4 border-b border-[#262626]">
-            <div>
-              <p className="mono-label text-[#808080]">Cross-Disciplinary Roster</p>
-              <h2 className="text-2xl sm:text-3xl font-normal text-white mt-1">
-                Core Engineering Team
-              </h2>
-            </div>
-            <span className="font-mono text-xs text-[#00e5ff]">
-              11 SPECIALISTS
-            </span>
+          <div className="mb-8">
+            <p className="mono-label mb-2 text-[#A0828A]">Engineering Subsystems</p>
+            <h2 className="text-2xl sm:text-4xl font-normal text-white font-heading tracking-tight">
+              Team Roster &amp; Subsystems
+            </h2>
           </div>
-
-          <TeamRoster members={AETOS_MEMBERS} domainName="Aerial Robotics" />
+          <TeamRoster members={AETOS_MEMBERS} />
         </div>
       </div>
     </div>
