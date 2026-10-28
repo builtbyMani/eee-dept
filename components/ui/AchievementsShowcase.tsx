@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { tactileSpring, settleSpring } from "@/components/motion/SpringPhysics";
+import { settleSpring } from "@/components/motion/SpringPhysics";
 
 interface AchievementItem {
   id: string;
@@ -136,7 +136,6 @@ const FILTER_TABS = [
 
 export default function AchievementsShowcase() {
   const [activeTab, setActiveTab] = useState<string>("ALL");
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const filteredItems = ALL_ACHIEVEMENTS.filter((item) => {
     if (activeTab === "ALL") return true;
@@ -146,79 +145,35 @@ export default function AchievementsShowcase() {
     return true;
   });
 
-  const scroll = (direction: "left" | "right") => {
-    if (scrollContainerRef.current) {
-      const scrollAmount = direction === "left" ? -580 : 580;
-      scrollContainerRef.current.scrollBy({
-        left: scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
-
   return (
     <div className="relative">
-      {/* Top Filter Tabs & Scroll Controls */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-10 pb-6 border-b border-[#262626]">
-        {/* Animated Filter Tabs */}
-        <div className="flex flex-wrap items-center gap-2">
-          {FILTER_TABS.map((tab) => {
-            const isActive = activeTab === tab.key;
-            return (
-              <button
-                key={tab.key}
-                onClick={() => setActiveTab(tab.key)}
-                className={`relative px-4 py-2 font-mono text-xs uppercase tracking-wider transition-colors cursor-pointer ${
-                  isActive ? "text-white" : "text-[#808080] hover:text-[#c4c4c4]"
-                }`}
-              >
-                {isActive && (
-                  <motion.div
-                    layoutId="activeTabBadge"
-                    className="absolute inset-0 bg-[#262626] border border-[#383838]"
-                    transition={settleSpring}
-                  />
-                )}
-                <span className="relative z-10">{tab.label}</span>
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Apple-Style Smooth Scroll Navigation Buttons */}
-        <div className="hidden sm:flex items-center gap-3">
-          <span className="font-mono text-xs text-[#808080] mr-2">
-            DRAG OR SCROLL ↔
-          </span>
-          <motion.button
-            whileHover={{ y: -1 }}
-            whileTap={{ scale: 0.94 }}
-            transition={tactileSpring}
-            onClick={() => scroll("left")}
-            aria-label="Scroll left"
-            className="w-11 h-11 border border-[#262626] bg-[#141414] text-white hover:bg-[#262626] flex items-center justify-center transition-colors cursor-pointer"
-          >
-            ←
-          </motion.button>
-          <motion.button
-            whileHover={{ y: -1 }}
-            whileTap={{ scale: 0.94 }}
-            transition={tactileSpring}
-            onClick={() => scroll("right")}
-            aria-label="Scroll right"
-            className="w-11 h-11 border border-[#262626] bg-[#141414] text-white hover:bg-[#262626] flex items-center justify-center transition-colors cursor-pointer"
-          >
-            →
-          </motion.button>
-        </div>
+      {/* Top Filter Tabs (Clean vertical page layout, no horizontal scroll) */}
+      <div className="flex flex-wrap items-center gap-2 mb-10 pb-6 border-b border-[#262626]">
+        {FILTER_TABS.map((tab) => {
+          const isActive = activeTab === tab.key;
+          return (
+            <button
+              key={tab.key}
+              onClick={() => setActiveTab(tab.key)}
+              className={`relative px-4 py-2 font-mono text-xs uppercase tracking-wider transition-colors cursor-pointer ${
+                isActive ? "text-white" : "text-[#808080] hover:text-[#c4c4c4]"
+              }`}
+            >
+              {isActive && (
+                <motion.div
+                  layoutId="activeTabBadge"
+                  className="absolute inset-0 bg-[#262626] border border-[#383838]"
+                  transition={settleSpring}
+                />
+              )}
+              <span className="relative z-10">{tab.label}</span>
+            </button>
+          );
+        })}
       </div>
 
-      {/* Horizontal Scroll Track — Widescreen, Non-Square Cards */}
-      <div
-        ref={scrollContainerRef}
-        className="flex gap-6 overflow-x-auto pb-8 pt-2 scrollbar-none snap-x snap-mandatory cursor-grab active:cursor-grabbing"
-        style={{ scrollbarWidth: "none" }}
-      >
+      {/* Large Responsive Vertical Grid — NO Horizontal Scrolling */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <AnimatePresence mode="popLayout">
           {filteredItems.map((item, idx) => {
             const isGold = item.accentColor === "gold";
@@ -228,13 +183,13 @@ export default function AchievementsShowcase() {
               <motion.div
                 key={item.id}
                 layout
-                initial={{ opacity: 0, scale: 0.96 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.96 }}
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.98 }}
                 transition={settleSpring}
-                className="snap-start flex-shrink-0 w-[min(90vw,560px)] sm:w-[620px] lg:w-[660px] p-8 sm:p-10 border border-[#262626] bg-[#0e0e0e] hover:border-[#383838] transition-all flex flex-col justify-between relative group overflow-hidden"
+                className="w-full p-8 sm:p-10 border border-[#262626] bg-[#0e0e0e] hover:border-[#383838] transition-all flex flex-col justify-between relative group overflow-hidden"
               >
-                {/* Subtle Card Accent Highlight */}
+                {/* Accent Top Border */}
                 <div
                   className={`absolute top-0 left-0 right-0 h-[2px] ${
                     isGold
@@ -251,7 +206,7 @@ export default function AchievementsShowcase() {
                     <span className="font-mono text-[11px] text-[#808080] uppercase tracking-wider">
                       {item.categoryLabel}
                     </span>
-                    <span className="font-mono text-xs text-[#808080] border border-[#262626] px-2 py-0.5">
+                    <span className="font-mono text-xs text-[#808080] border border-[#262626] px-2.5 py-0.5">
                       {item.date}
                     </span>
                   </div>

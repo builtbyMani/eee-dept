@@ -52,15 +52,16 @@ export default function HodSection() {
             </div>
 
             {/* Photo Container */}
-            <div className="relative aspect-[4/3] sm:aspect-square w-full border border-[#262626] bg-[#141414] mb-8 overflow-hidden">
+            <div className="relative aspect-square w-full border border-[#262626] bg-[#141414] mb-8 overflow-hidden">
               <Image
                 src="/images/dr-phani-shree.png"
                 alt="Dr. K. H. Phani Shree — Head of Department, EEE, JNTUH UCESTH"
                 fill
+                priority
                 sizes="(max-width: 1024px) 100vw, 480px"
-                className="object-cover object-top filter contrast-105 group-hover:scale-105 transition-transform duration-500"
+                className="object-cover object-center filter contrast-105 group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#090909] via-transparent to-transparent opacity-60" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#090909]/80 via-transparent to-transparent opacity-60" />
             </div>
 
             {/* Name & Designation */}

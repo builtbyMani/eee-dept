@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion } from "motion/react";
 import { tactileSpring } from "@/components/motion/SpringPhysics";
@@ -12,23 +13,19 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-40 w-full glass-header">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 h-16 flex items-center justify-between gap-4">
-        {/* Brand / Logo */}
+        {/* Brand / Logo with Official JNTUH Emblem */}
         <Link
           href="/"
           className="flex items-center gap-3 text-white no-underline font-mono text-xs tracking-widest uppercase hover:opacity-90 transition-opacity"
         >
-          <svg
-            width="22"
-            height="22"
-            viewBox="0 0 22 22"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            className="text-white"
-          >
-            <rect x="1" y="1" width="20" height="20" />
-            <path d="M4 11h3l2-4 4 8 2-4h3" />
-          </svg>
+          <div className="relative w-8 h-8 flex-shrink-0 rounded-full bg-white/5 p-0.5 border border-white/10">
+            <Image
+              src="/images/jntuh-logo.png"
+              alt="JNTU Hyderabad Official Emblem"
+              fill
+              className="object-contain p-0.5"
+            />
+          </div>
           <span className="font-semibold tracking-wider">EEE · JNTUH</span>
         </Link>
 

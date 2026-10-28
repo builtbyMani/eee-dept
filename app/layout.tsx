@@ -22,6 +22,15 @@ export const metadata: Metadata = {
   title: "Department of Electrical & Electronics Engineering — JNTUH UCESTH",
   description:
     "Student engineering projects, formula electric racing, autonomous aerial & ground robotics, MSME research grants, and technical achievements at JNTU Hyderabad.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    apple: [
+      { url: "/icon.png" },
+    ],
+  },
 };
 
 export const viewport: Viewport = {

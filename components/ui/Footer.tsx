@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -115,9 +116,27 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Big Brand Watermark */}
-        <div className="py-8 select-none overflow-hidden">
-          <div className="font-sans font-light text-[clamp(3.5rem,15vw,13rem)] leading-none tracking-tighter text-[#161616] truncate">
+        {/* Big Brand Watermark with Official Emblem */}
+        <div className="py-12 select-none flex flex-col md:flex-row items-start md:items-center justify-between gap-6 overflow-hidden">
+          <div className="flex items-center gap-6">
+            <div className="relative w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 opacity-80">
+              <Image
+                src="/images/jntuh-logo.png"
+                alt="JNTU Hyderabad Official University Crest"
+                fill
+                className="object-contain"
+              />
+            </div>
+            <div>
+              <p className="font-mono text-xs text-[#808080] uppercase tracking-widest">
+                JAWAHARLAL NEHRU TECHNOLOGICAL UNIVERSITY HYDERABAD
+              </p>
+              <p className="text-sm font-mono text-[#c4c4c4]">
+                Department of Electrical &amp; Electronics Engineering
+              </p>
+            </div>
+          </div>
+          <div className="font-sans font-light text-[clamp(2.5rem,10vw,8rem)] leading-none tracking-tighter text-[#1c1c1c] truncate">
             EEE · JNTUH
           </div>
         </div>
