@@ -49,11 +49,11 @@ export default function LeadCard({
         </div>
 
         {/* Name and Designation */}
-        <h3 className="text-xl sm:text-2xl font-normal text-white font-heading tracking-tight mb-1">
+        <h3 className="text-xl sm:text-2xl font-semibold text-white font-heading tracking-tight mb-1">
           {name}
         </h3>
-        <p className="text-sm text-[#FF4D6D] font-mono mb-1">{role}</p>
-        <p className="text-xs text-[#A0828A] mb-5">{department}</p>
+        <p className="text-sm text-[#FF4D6D] font-mono mb-1 font-medium">{role}</p>
+        <p className="text-xs text-[#E8DCE0] mb-5">{department}</p>
 
         {/* Accolades / Hackathon Win Badges if any */}
         {achievements.length > 0 && (
@@ -61,7 +61,7 @@ export default function LeadCard({
             {achievements.map((ach, idx) => (
               <div
                 key={idx}
-                className="text-[11px] font-mono text-[#E2B6BD] flex items-start gap-2"
+                className="text-[11px] font-mono text-[#F0E6E9] flex items-start gap-2"
               >
                 <span className="text-[#FF4D6D] mt-0.5">•</span>
                 <span>{ach}</span>
@@ -77,7 +77,7 @@ export default function LeadCard({
           href={linkedinUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-4 pt-4 border-t border-[#2D141A] flex items-center justify-between text-xs font-mono text-[#A0828A] group-hover:text-white transition-colors"
+          className="mt-4 pt-4 border-t border-[#2D141A] flex items-center justify-between text-xs font-mono text-[#E8DCE0] group-hover:text-white transition-colors"
         >
           <span className="flex items-center gap-2">
             <svg

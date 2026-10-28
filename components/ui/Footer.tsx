@@ -46,17 +46,17 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <Link href="/aetos" className="hover:text-white transition-colors text-[#A0828A]">
+                <Link href="/aetos" className="hover:text-white transition-colors text-[#D4C4C8]">
                   AËTOS — Autonomous Drone (ISRO IROC-U)
                 </Link>
               </li>
               <li>
-                <Link href="/autonomous-vehicle" className="hover:text-white transition-colors text-[#A0828A]">
+                <Link href="/autonomous-vehicle" className="hover:text-white transition-colors text-[#D4C4C8]">
                   Autonomous Vehicle Platform (DBW &amp; ROS2)
                 </Link>
               </li>
               <li>
-                <Link href="/rover" className="hover:text-white transition-colors text-[#A0828A]">
+                <Link href="/rover" className="hover:text-white transition-colors text-[#D4C4C8]">
                   Planetary Rover Team (IRC)
                 </Link>
               </li>
@@ -68,17 +68,17 @@ export default function Footer() {
             <p className="mono-label mb-4 text-[#FF4D6D]">Department</p>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <Link href="/#leadership" className="hover:text-white transition-colors text-[#A0828A]">
+                <Link href="/#leadership" className="hover:text-white transition-colors text-[#D4C4C8]">
                   Head of Department (Dr. Phani Shree)
                 </Link>
               </li>
               <li>
-                <Link href="/#achievements" className="hover:text-white transition-colors text-[#A0828A]">
+                <Link href="/#achievements" className="hover:text-white transition-colors text-[#D4C4C8]">
                   MSME 5.0 Grant &amp; Hackathon Wins
                 </Link>
               </li>
               <li>
-                <Link href="/#approach" className="hover:text-white transition-colors text-[#A0828A]">
+                <Link href="/#approach" className="hover:text-white transition-colors text-[#D4C4C8]">
                   Project-Based Learning Lifecycle
                 </Link>
               </li>
@@ -86,7 +86,7 @@ export default function Footer() {
                 <button
                   type="button"
                   onClick={() => openContactModal("Industry & Alumni Technical Collaboration")}
-                  className="hover:text-white transition-colors text-[#A0828A] cursor-pointer text-left"
+                  className="hover:text-white transition-colors text-[#D4C4C8] cursor-pointer text-left"
                 >
                   Industry &amp; Alumni Collaborations ↗
                 </button>
@@ -171,10 +171,10 @@ export default function Footer() {
               />
             </div>
             <div>
-              <p className="font-mono text-xs text-[#A0828A] uppercase tracking-widest group-hover:text-white transition-colors">
+              <p className="font-mono text-xs text-[#D4C4C8] uppercase tracking-widest group-hover:text-white transition-colors">
                 JAWAHARLAL NEHRU TECHNOLOGICAL UNIVERSITY HYDERABAD
               </p>
-              <p className="text-sm font-mono text-[#E2B6BD] group-hover:text-white transition-colors">
+              <p className="text-sm font-mono text-[#F0E6E9] group-hover:text-white transition-colors">
                 Department of Electrical &amp; Electronics Engineering
               </p>
             </div>
@@ -185,7 +185,7 @@ export default function Footer() {
         </div>
 
         {/* Legal & Dynamic Copyright */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-6 border-t border-[#2D141A] text-xs font-mono text-[#A0828A]">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-6 border-t border-[#2D141A] text-xs font-mono text-[#D4C4C8]">
           <p>© {currentYear} Department of Electrical &amp; Electronics Engineering, JNTUH UCESTH.</p>
           <p className="tracking-widest uppercase text-[#FF4D6D]">
             Spec-Driven Hardware &amp; Robotics · Estd. 1965

@@ -154,11 +154,11 @@ export default function ContactModal() {
                 </div>
                 <h3
                   id="contact-modal-title"
-                  className="text-2xl sm:text-3xl font-normal text-white font-heading tracking-tight mb-3"
+                  className="text-2xl sm:text-3xl font-semibold text-white font-heading tracking-tight mb-3"
                 >
                   Inquiry Dispatched Successfully
                 </h3>
-                <p className="text-sm text-[#A0828A] max-w-md mx-auto leading-relaxed mb-8">
+                <p className="text-sm text-[#E8DCE0] max-w-md mx-auto leading-relaxed mb-8">
                   Your message has been logged into the Department of EEE telemetry queue.
                   Faculty coordinators and the student machine leads will review your inquiry
                   and respond to your email.
@@ -172,16 +172,16 @@ export default function ContactModal() {
               </div>
             ) : (
               <div>
-                <div className="mono-label text-[#FF4D6D] mb-2">
+                <div className="mono-label text-[#FF4D6D] mb-2 font-medium">
                   TELEMETRY DISPATCH // INQUIRY
                 </div>
                 <h3
                   id="contact-modal-title"
-                  className="text-2xl sm:text-3xl font-normal text-white font-heading tracking-tight mb-2"
+                  className="text-2xl sm:text-3xl font-semibold text-white font-heading tracking-tight mb-2"
                 >
                   Connect With The Department
                 </h3>
-                <p className="text-xs sm:text-sm text-[#A0828A] mb-6 leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#E8DCE0] mb-6 leading-relaxed">
                   Apply for student engineering openings (Formula Student, Aëtos, AV, Rover),
                   propose technical collaboration, or inquire regarding lab research.
                 </p>

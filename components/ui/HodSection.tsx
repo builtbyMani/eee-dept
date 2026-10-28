@@ -49,7 +49,7 @@ export default function HodSection() {
               <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#7F011F]/20 border border-[#7F011F]/40 text-[#FF4D6D] font-mono text-xs uppercase tracking-wider font-medium">
                 ★ HEAD OF THE DEPARTMENT
               </span>
-              <span className="font-mono text-xs text-[#A0828A]">ESTD. 1965</span>
+              <span className="font-mono text-xs text-[#D4C4C8]">ESTD. 1965</span>
             </div>
 
             {/* Photo Container */}
@@ -66,19 +66,19 @@ export default function HodSection() {
             </div>
 
             {/* Name & Designation */}
-            <h3 className="text-2xl sm:text-3xl font-normal text-white font-heading tracking-tight mb-2">
+            <h3 className="text-2xl sm:text-3xl font-semibold text-white font-heading tracking-tight mb-2">
               Dr. K. H. Phani Shree
             </h3>
-            <p className="text-sm font-mono text-[#FF4D6D] mb-2">
+            <p className="text-sm font-mono text-[#FF4D6D] mb-2 font-medium">
               Professor &amp; Head of Department
             </p>
-            <p className="text-xs text-[#A0828A] leading-relaxed mb-6">
+            <p className="text-xs text-[#E8DCE0] leading-relaxed mb-6">
               Department of Electrical &amp; Electronics Engineering<br />
               JNTUH University College of Engineering Science &amp; Technology
             </p>
 
             {/* Core Leadership Milestones */}
-            <div className="space-y-2 pt-6 border-t border-[#2D141A] text-xs font-mono text-[#E2B6BD]">
+            <div className="space-y-2 pt-6 border-t border-[#2D141A] text-xs font-mono text-[#F0E6E9]">
               <div className="flex items-start gap-2">
                 <span className="text-[#FF4D6D]">•</span>
                 <span>Faculty Mentor — Hexawatts Racing Team (Formula Bharat)</span>
@@ -104,18 +104,18 @@ export default function HodSection() {
           >
             {/* The Quote Block */}
             <blockquote className="border-l-2 border-[#7F011F] pl-6 sm:pl-8 mb-10 py-1">
-              <p className="text-xl sm:text-2xl lg:text-3xl font-normal text-white font-heading tracking-tight leading-relaxed mb-4">
+              <p className="text-xl sm:text-2xl lg:text-3xl font-medium text-white font-heading tracking-tight leading-relaxed mb-4">
                 &ldquo;Engineering education cannot remain confined to chalk and simulation screens.
                 When our students solder battery management units, configure CAN-bus nodes,
                 and tune flight dynamics for national arenas, that is where authentic engineers are forged.&rdquo;
               </p>
-              <cite className="font-mono text-xs text-[#FF4D6D] uppercase tracking-wider not-italic block">
+              <cite className="font-mono text-xs text-[#FF4D6D] uppercase tracking-wider not-italic block font-medium">
                 — Dr. K. H. Phani Shree, Address to Faculty &amp; Industry Advisory Board
               </cite>
             </blockquote>
 
             {/* Narrative Body */}
-            <div className="space-y-6 text-[#A0828A] text-sm sm:text-base leading-relaxed mb-10">
+            <div className="space-y-6 text-[#E8DCE0] text-sm sm:text-base leading-relaxed mb-10">
               <p>
                 Under Dr. Phani Shree&apos;s administration, the department executed a fundamental pivot
                 toward student-led research and high-stakes competitive engineering.
@@ -124,10 +124,10 @@ export default function HodSection() {
                 for four flagship multidisciplinary teams.
               </p>
               <p>
-                From guiding <strong className="text-white font-medium">Hexawatts Racing</strong> through
+                From guiding <strong className="text-white font-semibold">Hexawatts Racing</strong> through
                 rigorous Formula Bharat scrutineering to sanctioning autonomy testbeds for the{" "}
-                <strong className="text-white font-medium">AËTOS GNSS-denied drone</strong> and{" "}
-                <strong className="text-white font-medium">Planetary Rover</strong>, her stewardship
+                <strong className="text-white font-semibold">AËTOS GNSS-denied drone</strong> and{" "}
+                <strong className="text-white font-semibold">Planetary Rover</strong>, her stewardship
                 has positioned JNTUH UCESTH as a premier crucible for electric vehicle mobility and field robotics.
               </p>
             </div>
@@ -135,26 +135,26 @@ export default function HodSection() {
             {/* Impact Metric Chips */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 p-6 glass-card border-[#2D141A] mb-8">
               <div>
-                <p className="font-mono text-2xl sm:text-3xl font-light text-white font-heading mb-1">
+                <p className="font-mono text-2xl sm:text-3xl font-semibold text-white font-heading mb-1">
                   04
                 </p>
-                <p className="font-mono text-[11px] text-[#A0828A] uppercase">
+                <p className="font-mono text-[11px] text-[#D4C4C8] uppercase font-medium">
                   Flagship Student Hardware Teams
                 </p>
               </div>
               <div>
-                <p className="font-mono text-2xl sm:text-3xl font-light text-[#FF4D6D] font-heading mb-1">
+                <p className="font-mono text-2xl sm:text-3xl font-semibold text-[#FF4D6D] font-heading mb-1">
                   100%
                 </p>
-                <p className="font-mono text-[11px] text-[#A0828A] uppercase">
+                <p className="font-mono text-[11px] text-[#D4C4C8] uppercase font-medium">
                   Student-Led Fabrication
                 </p>
               </div>
               <div className="col-span-2 sm:col-span-1">
-                <p className="font-mono text-2xl sm:text-3xl font-light text-white font-heading mb-1">
+                <p className="font-mono text-2xl sm:text-3xl font-semibold text-white font-heading mb-1">
                   60 Yrs
                 </p>
-                <p className="font-mono text-[11px] text-[#A0828A] uppercase">
+                <p className="font-mono text-[11px] text-[#D4C4C8] uppercase font-medium">
                   Departmental Pedigree
                 </p>
               </div>

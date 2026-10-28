@@ -157,7 +157,7 @@ export default function AchievementsShowcase() {
               key={tab.key}
               onClick={() => setActiveTab(tab.key)}
               className={`relative px-4 py-2 font-mono text-xs uppercase tracking-wider transition-colors cursor-pointer ${
-                isActive ? "text-white" : "text-[#A0828A] hover:text-[#E2B6BD]"
+                isActive ? "text-white font-medium" : "text-[#D4C4C8] hover:text-white"
               }`}
             >
               {isActive && (
@@ -185,7 +185,7 @@ export default function AchievementsShowcase() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.98 }}
                 transition={settleSpring}
-                className="w-full p-8 sm:p-10 border border-[#2D141A] bg-[#0E0608] hover:border-[#7F011F] transition-all flex flex-col justify-between relative group overflow-hidden shadow-[inset_0_0_30px_rgba(127,1,31,0.04)]"
+                className="w-full p-8 sm:p-10 border border-[#2D141A] bg-[#0E0608]/95 hover:border-[#7F011F] transition-all flex flex-col justify-between relative group overflow-hidden shadow-[inset_0_0_30px_rgba(127,1,31,0.04)]"
               >
                 {/* Accent Top Border */}
                 <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#FF4D6D] to-transparent opacity-80" />
@@ -193,36 +193,36 @@ export default function AchievementsShowcase() {
                 <div>
                   {/* Top Header: Tag & Date */}
                   <div className="flex items-center justify-between gap-4 mb-6">
-                    <span className="font-mono text-[11px] text-[#A0828A] uppercase tracking-wider">
+                    <span className="font-mono text-[11px] text-[#FF5A7A] uppercase tracking-wider font-medium">
                       {item.categoryLabel}
                     </span>
-                    <span className="font-mono text-xs text-[#A0828A] border border-[#2D141A] px-2.5 py-0.5">
+                    <span className="font-mono text-xs text-[#E2D4D8] border border-[#3D1A22] bg-[#1A0A0E] px-2.5 py-0.5">
                       {item.date}
                     </span>
                   </div>
 
                   {/* Main Callout & Badge Row */}
                   <div className="flex flex-wrap items-baseline justify-between gap-4 mb-4">
-                    <div className="font-mono text-3xl sm:text-5xl font-light tracking-tight text-white font-heading">
+                    <div className="font-mono text-3xl sm:text-5xl font-semibold tracking-tight text-white font-heading">
                       {item.statCallout}
                     </div>
-                    <span className="font-mono text-xs uppercase px-2.5 py-1 border bg-[#7F011F]/20 border-[#7F011F]/50 text-[#FF4D6D] font-medium">
+                    <span className="font-mono text-xs uppercase px-2.5 py-1 border bg-[#7F011F]/25 border-[#7F011F]/60 text-[#FF4D6D] font-medium shadow-[0_0_12px_rgba(127,1,31,0.3)]">
                       ★ {item.badge}
                     </span>
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl sm:text-2xl font-normal text-white font-heading tracking-tight mb-2 leading-snug">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-white font-heading tracking-tight mb-2 leading-snug">
                     {item.title}
                   </h3>
 
                   {/* Student & Faculty Names */}
-                  <p className="font-mono text-xs text-[#E2B6BD] mb-4">
+                  <p className="font-mono text-xs text-[#FF85A0] mb-4">
                     {item.students}
                   </p>
 
-                  {/* Narrative Context */}
-                  <p className="text-sm sm:text-base text-[#A0828A] leading-relaxed mb-6">
+                  {/* Narrative Context (High Contrast & Legible) */}
+                  <p className="text-sm sm:text-base text-[#E8DCE0] leading-relaxed mb-6 font-normal">
                     {item.summary}
                   </p>
                 </div>
@@ -234,17 +234,17 @@ export default function AchievementsShowcase() {
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#E2B6BD] hover:text-white inline-flex items-center gap-2 transition-colors group/link"
+                      className="text-[#F0E6E9] hover:text-white inline-flex items-center gap-2 transition-colors group/link font-medium"
                     >
                       <span>Verified Post on Department LinkedIn</span>
                       <span className="text-[#FF4D6D] transition-transform group-hover/link:translate-x-1">↗</span>
                     </a>
                   ) : (
-                    <span className="text-[#6B4E54]">
+                    <span className="text-[#A38890]">
                       OFFICIAL DEPARTMENT ARCHIVE · 2026
                     </span>
                   )}
-                  <span className="text-[#A0828A]">
+                  <span className="text-[#D4C4C8]">
                     #{String(idx + 1).padStart(2, "0")}
                   </span>
                 </div>

@@ -9,8 +9,9 @@
   --wine-accent: #FF4D6D;
   --wine-glow: rgba(127, 1, 31, 0.45);
   --white: #ffffff;
-  --lead: #E2B6BD;
-  --body: #A0828A;
+  --lead: #F0E6E9;
+  --body: #E8DCE0;
+  --muted: #C5B0B7;
   --border: #2D141A;
   --border-hover: #7F011F;
 }
@@ -22,8 +23,9 @@
   --color-wine-dark: #4A0112;
   --color-wine-light: #A31D36;
   --color-wine-accent: #FF4D6D;
-  --color-lead: #E2B6BD;
-  --color-body: #A0828A;
+  --color-lead: #F0E6E9;
+  --color-body: #E8DCE0;
+  --color-muted: #C5B0B7;
   --color-border: #2D141A;
   --color-brand: #7F011F;
   --font-heading: var(--font-heading), 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;

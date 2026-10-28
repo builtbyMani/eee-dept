@@ -65,55 +65,22 @@ export default function HomePage() {
       <FieldHorizontalRowsBg />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden min-h-[min(90vh,880px)] flex items-center pt-24 pb-16 sm:pb-20 border-b border-[#2D141A]">
-        {/* Animated Background Electrical Traces */}
-        <svg
-          className="pointer-events-none absolute right-0 top-0 w-[min(950px,100%)] h-full opacity-35 text-[#4A0112]"
-          viewBox="0 0 900 700"
-          preserveAspectRatio="xMaxYMid slice"
-          aria-hidden="true"
-        >
-          <motion.path
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 2.4, ease: "easeOut" }}
-            d="M900 120H640l-60 60H420v140h-120l-50 50v130H0"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.2"
-          />
-          <motion.path
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 2.8, delay: 0.3, ease: "easeOut" }}
-            d="M900 300h-180l-40 40v120H520l-40 40v100"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.2"
-          />
-          <motion.path
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 2.2, delay: 0.6, ease: "easeOut" }}
-            d="M900 520H760l-50-50M640 700V560h-80"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.2"
-          />
-        </svg>
-
+      <section className="relative overflow-hidden min-h-[min(90vh,880px)] flex items-center pt-32 sm:pt-40 lg:pt-44 pb-16 sm:pb-24 border-b border-[#2D141A]">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-8 w-full relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             {/* Left Column: Heading, Subhead & Action CTAs (7 cols) */}
             <div className="lg:col-span-7">
+              {/* Department Title — Bigger, Bolder, Magari/Raleway, No Rectangle Box */}
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={settleSpring}
-                className="inline-flex items-center gap-2 px-3 py-1 bg-[#7F011F]/15 border border-[#7F011F]/40 text-[#FF4D6D] font-mono text-xs uppercase tracking-widest mb-6"
+                className="flex items-center gap-3 mb-6"
               >
-                <span className="w-1.5 h-1.5 rounded-full bg-[#FF4D6D] animate-pulse" />
-                <span>Department of Electrical &amp; Electronics Engineering</span>
+                <span className="w-2.5 h-2.5 rounded-full bg-[#FF2E5B] shadow-[0_0_12px_#FF2E5B] animate-pulse shrink-0" />
+                <span className="font-heading font-bold text-base sm:text-lg md:text-xl uppercase tracking-wider text-[#FF3358]">
+                  Department of Electrical &amp; Electronics Engineering
+                </span>
               </motion.div>
 
               {/* Elemental Lightning Heading */}
@@ -133,7 +100,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ ...settleSpring, delay: 0.15 }}
-                className="text-lg sm:text-xl text-[#E2B6BD] max-w-2xl leading-relaxed mb-10"
+                className="text-lg sm:text-xl text-[#F0E6E9] max-w-2xl leading-relaxed mb-10"
               >
                 <span className="text-white font-medium">
                   Four student teams, four machines in progress.
@@ -189,51 +156,29 @@ export default function HomePage() {
               </motion.div>
             </div>
 
-            {/* Right Column: Blended Tesla Coil / High-Voltage Discharge Photograph (5 cols) */}
+            {/* Right Column: Seamless High-Voltage Discharge Image (Enlarged, Zero Borders, No Text) */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-              className="lg:col-span-5 relative flex flex-col items-center justify-center"
+              className="lg:col-span-5 relative flex items-center justify-center"
             >
-              {/* Dark Wine Red Ambient Glow Underneath */}
+              {/* Soft Ambient Wine Red Glow Behind Coil */}
               <div
-                className="pointer-events-none absolute w-[360px] h-[360px] rounded-full bg-[#7F011F]/30 blur-[100px] z-0"
+                className="pointer-events-none absolute w-[420px] h-[420px] rounded-full bg-[#7F011F]/25 blur-[120px] z-0"
                 aria-hidden="true"
               />
 
-              {/* Masked Arc Discharge Photo Container */}
-              <div className="relative w-full max-w-[380px] aspect-[366/419] flex items-center justify-center z-10 group">
-                <div
-                  className="relative w-full h-full overflow-hidden transition-transform duration-700 group-hover:scale-[1.02]"
-                  style={{
-                    maskImage:
-                      "radial-gradient(ellipse at center, black 45%, rgba(0,0,0,0.85) 65%, transparent 88%)",
-                    WebkitMaskImage:
-                      "radial-gradient(ellipse at center, black 45%, rgba(0,0,0,0.85) 65%, transparent 88%)",
-                  }}
-                >
-                  <Image
-                    src="/images/high-voltage-arc.jpg"
-                    alt="High-Voltage Tesla Resonator Dielectric Arc Discharge in Laboratory"
-                    fill
-                    priority
-                    sizes="(max-width: 1024px) 340px, 380px"
-                    className="object-contain filter contrast-125 brightness-105 group-hover:brightness-110 transition-all duration-500"
-                  />
-                  {/* Subtle Wine Red Atmospheric Filter */}
-                  <div className="absolute inset-0 bg-[#7F011F]/15 mix-blend-color pointer-events-none" />
-                </div>
-              </div>
-
-              {/* Technical Apparatus Caption */}
-              <div className="mt-4 text-center z-10">
-                <p className="font-mono text-[10px] tracking-widest uppercase text-[#FF4D6D]">
-                  HIGH-VOLTAGE DISCHARGE // APPARATUS NODE 01
-                </p>
-                <p className="font-mono text-[11px] text-[#A0828A]">
-                  Tesla Resonator &amp; Dielectric Plasma Breakdown
-                </p>
+              {/* Masked High-Resolution Transparent Discharge */}
+              <div className="relative w-full max-w-[460px] lg:max-w-[520px] aspect-[868/1024] flex items-center justify-center z-10 group">
+                <Image
+                  src="/images/high-voltage-arc.png"
+                  alt="High-Voltage Laboratory Arc Discharge"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 440px, 520px"
+                  className="object-contain filter contrast-110 brightness-105 group-hover:scale-105 transition-transform duration-700 pointer-events-none"
+                />
               </div>
             </motion.div>
           </div>
@@ -241,49 +186,49 @@ export default function HomePage() {
       </section>
 
       {/* Numerical Spec Strip */}
-      <section className="border-b border-[#2D141A] bg-[#0C0608]">
+      <section className="relative z-10 border-b border-[#2D141A] bg-[#0C0608]/95 backdrop-blur-sm">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-[#2D141A]">
             <div className="py-8 sm:py-10 pr-6">
               <div className="font-mono text-4xl sm:text-6xl text-white font-light tracking-tight mb-2 font-heading">
                 04
               </div>
-              <p className="mono-label text-[#A0828A]">Active Student Machines</p>
+              <p className="mono-label text-[#D4C4C8]">Active Student Machines</p>
             </div>
             <div className="py-8 sm:py-10 sm:px-6">
               <div className="font-mono text-4xl sm:text-6xl text-[#FF4D6D] font-light tracking-tight mb-2 font-heading">
                 ₹15L
               </div>
-              <p className="mono-label text-[#A0828A]">MSME 5.0 Grant Won</p>
+              <p className="mono-label text-[#D4C4C8]">MSME 5.0 Grant Won</p>
             </div>
             <div className="py-8 sm:py-10 sm:px-6">
-              <div className="font-mono text-4xl sm:text-6xl text-[#E2B6BD] font-light tracking-tight mb-2 font-heading">
+              <div className="font-mono text-4xl sm:text-6xl text-[#F0E6E9] font-light tracking-tight mb-2 font-heading">
                 60
               </div>
-              <p className="mono-label text-[#A0828A]">Years of Legacy (1965-2025)</p>
+              <p className="mono-label text-[#D4C4C8]">Years of Legacy (1965-2025)</p>
             </div>
             <div className="py-8 sm:py-10 sm:pl-6">
               <div className="font-mono text-4xl sm:text-6xl text-white font-light tracking-tight mb-2 font-heading">
                 03
               </div>
-              <p className="mono-label text-[#A0828A]">National Arenas (FB, ISRO, IRC)</p>
+              <p className="mono-label text-[#D4C4C8]">National Arenas (FB, ISRO, IRC)</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Projects Showcase Section */}
-      <section id="projects" className="py-20 sm:py-28 border-b border-[#2D141A]">
+      <section id="projects" className="relative z-10 py-20 sm:py-28 border-b border-[#2D141A] bg-[#090909]/92 backdrop-blur-[2px]">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-end mb-16">
             <div>
               <p className="mono-label mb-3 text-[#FF4D6D]">Engineering In The Metal</p>
-              <h2 className="text-3xl sm:text-5xl font-normal text-white font-heading tracking-tight leading-tight">
+              <h2 className="text-3xl sm:text-5xl font-semibold text-white font-heading tracking-tight leading-tight">
                 Four machines, <br />
                 built by students.
               </h2>
             </div>
-            <p className="text-base sm:text-lg text-[#A0828A] leading-relaxed">
+            <p className="text-base sm:text-lg text-[#E8DCE0] leading-relaxed">
               <span className="text-white font-medium">
                 Each team owns a real engineering challenge from first sketch to live competition.
               </span>{" "}
@@ -301,22 +246,22 @@ export default function HomePage() {
       </section>
 
       {/* Dedicated Head of Department Section */}
-      <div id="leadership">
+      <div id="leadership" className="relative z-10">
         <HodSection />
       </div>
 
       {/* Upgraded Achievements & MSME Showcase */}
-      <section id="achievements" className="py-20 sm:py-28 border-b border-[#2D141A] bg-[#090909]">
+      <section id="achievements" className="relative z-10 py-20 sm:py-28 border-b border-[#2D141A] bg-[#090909]/95 backdrop-blur-[2px]">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-end mb-12">
             <div>
               <p className="mono-label mb-3 text-[#FF4D6D]">Department Record of Excellence</p>
-              <h2 className="text-3xl sm:text-5xl font-normal text-white font-heading tracking-tight leading-tight">
+              <h2 className="text-3xl sm:text-5xl font-semibold text-white font-heading tracking-tight leading-tight">
                 Achievements, Grants &amp; <br />
                 National Podiums.
               </h2>
             </div>
-            <p className="text-base sm:text-lg text-[#A0828A] leading-relaxed">
+            <p className="text-base sm:text-lg text-[#E8DCE0] leading-relaxed">
               <span className="text-white font-medium">Real hardware produces real results.</span> From central government grants
               to national robotics podiums and 60 years of institutional leadership, explore our verified milestones.
             </p>
@@ -328,16 +273,16 @@ export default function HomePage() {
       </section>
 
       {/* How a Project Runs (Accordion) */}
-      <section id="approach" className="py-20 sm:py-28 border-b border-[#2D141A]">
+      <section id="approach" className="relative z-10 py-20 sm:py-28 border-b border-[#2D141A] bg-[#090909]/92 backdrop-blur-[2px]">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-end mb-16">
             <div>
               <p className="mono-label mb-3 text-[#FF4D6D]">Engineering Methodology</p>
-              <h2 className="text-3xl sm:text-5xl font-normal text-white font-heading tracking-tight leading-tight">
+              <h2 className="text-3xl sm:text-5xl font-semibold text-white font-heading tracking-tight leading-tight">
                 How a project runs.
               </h2>
             </div>
-            <p className="text-base sm:text-lg text-[#A0828A] leading-relaxed">
+            <p className="text-base sm:text-lg text-[#E8DCE0] leading-relaxed">
               Every team adheres to a structured four-phase development lifecycle.
               What changes is the physical domain and the engineering problem being solved.
             </p>
@@ -348,7 +293,7 @@ export default function HomePage() {
       </section>
 
       {/* Call to Action Section */}
-      <section id="join" className="py-24 sm:py-32 relative overflow-hidden">
+      <section id="join" className="relative z-10 py-24 sm:py-32 overflow-hidden bg-[#090909]/95">
         {/* Ambient Wine Red Glow */}
         <div
           className="pointer-events-none absolute -bottom-40 right-10 w-[600px] h-[400px] bg-[#7F011F]/15 blur-[140px]"
@@ -360,11 +305,11 @@ export default function HomePage() {
             <p className="mono-label mb-4 text-[#FF4D6D]">
               Open To Students, Alumni &amp; Industry
             </p>
-            <h2 className="text-3xl sm:text-6xl font-normal text-white font-heading tracking-tight leading-tight mb-6">
+            <h2 className="text-3xl sm:text-6xl font-semibold text-white font-heading tracking-tight leading-tight mb-6">
               Want to build with us <br />
               or back a machine?
             </h2>
-            <p className="text-base sm:text-xl text-[#A0828A] leading-relaxed mb-10">
+            <p className="text-base sm:text-xl text-[#E8DCE0] leading-relaxed mb-10">
               <span className="text-white font-medium">
                 Undergraduate students can inquire with team leads for domain openings.
               </span>{" "}
@@ -402,7 +347,7 @@ export default function HomePage() {
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.97 }}
                 transition={tactileSpring}
-                className="px-6 py-3.5 border border-[#2D141A] hover:border-[#7F011F] text-[#A0828A] hover:text-white font-mono text-xs uppercase tracking-wider flex items-center gap-4 group transition-colors cursor-pointer"
+                className="px-6 py-3.5 border border-[#2D141A] hover:border-[#7F011F] text-[#E8DCE0] hover:text-white font-mono text-xs uppercase tracking-wider flex items-center gap-4 group transition-colors cursor-pointer"
               >
                 <span>Department LinkedIn</span>
                 <span className="transition-transform group-hover:translate-x-1 text-[#FF4D6D]">↗</span>

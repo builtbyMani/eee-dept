@@ -43,7 +43,7 @@ export default function ProjectCard({
           <span className="text-white font-medium">
             {paddedIndex} {name}
           </span>
-          <span className="text-[#A0828A] flex items-center gap-2">
+          <span className="text-[#D4C4C8] flex items-center gap-2 font-medium">
             {highlightBadge && (
               <span className="text-[#FF4D6D] border border-[#7F011F]/50 bg-[#7F011F]/15 px-1.5 py-0.5 text-[10px] font-medium">
                 {highlightBadge}
@@ -75,18 +75,18 @@ export default function ProjectCard({
         </div>
 
         {/* Headline & Description */}
-        <h3 className="text-xl sm:text-2xl font-normal text-white mb-2 leading-snug tracking-tight font-heading">
+        <h3 className="text-xl sm:text-2xl font-semibold text-white mb-2 leading-snug tracking-tight font-heading">
           {headline}
         </h3>
-        <p className="text-sm text-[#A0828A] leading-relaxed mb-6 line-clamp-3">
+        <p className="text-sm text-[#E8DCE0] leading-relaxed mb-6 line-clamp-3">
           {description}
         </p>
       </div>
 
       {/* Action CTA */}
-      <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#E2B6BD] group-hover:text-[#FF4D6D] transition-colors">
+      <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#F0E6E9] group-hover:text-[#FF4D6D] transition-colors font-medium">
         <span>{isExternal ? "Visit Team Portal" : "Explore Machine & Team"}</span>
-        <span className="transition-transform group-hover:translate-x-1 text-[#7F011F] group-hover:text-[#FF4D6D]">
+        <span className="transition-transform group-hover:translate-x-1 text-[#FF4D6D]">
           {isExternal ? "↗" : "→"}
         </span>
       </div>

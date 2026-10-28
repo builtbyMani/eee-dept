@@ -94,7 +94,7 @@ export default function MobileMenu({ isOpen, onClose, isHome }: MobileMenuProps)
 
               {/* Machine Pages Section */}
               <div className="mb-6">
-                <p className="font-mono text-[11px] uppercase tracking-wider text-[#A0828A] mb-3">
+                <p className="font-mono text-[11px] uppercase tracking-wider text-[#FF5A7A] mb-3 font-medium">
                   Student Machines
                 </p>
                 <div className="space-y-2">
@@ -102,14 +102,14 @@ export default function MobileMenu({ isOpen, onClose, isHome }: MobileMenuProps)
                     const inner = (
                       <div className="p-3 border border-[#2D141A] bg-[#140A0D] hover:border-[#7F011F] hover:bg-[#1C0E12] transition-colors rounded">
                         <div className="flex items-center justify-between mb-1">
-                          <span className="text-sm font-medium text-white">
+                          <span className="text-sm font-semibold text-white">
                             {item.name}
                           </span>
                           <span className="font-mono text-[10px] text-[#FF4D6D] border border-[#7F011F]/40 px-1 py-0.5">
                             {item.badge}
                           </span>
                         </div>
-                        <p className="font-mono text-[11px] text-[#A0828A]">
+                        <p className="font-mono text-[11px] text-[#D4C4C8]">
                           {item.sub} {item.isExternal ? "↗" : "→"}
                         </p>
                       </div>
@@ -142,14 +142,14 @@ export default function MobileMenu({ isOpen, onClose, isHome }: MobileMenuProps)
 
               {/* Department Anchors */}
               <div className="mb-6">
-                <p className="font-mono text-[11px] uppercase tracking-wider text-[#A0828A] mb-2">
+                <p className="font-mono text-[11px] uppercase tracking-wider text-[#FF5A7A] mb-2 font-medium">
                   Department
                 </p>
                 <nav className="space-y-1">
                   <Link
                     href={isHome ? "#leadership" : "/#leadership"}
                     onClick={onClose}
-                    className="flex items-center justify-between py-2.5 px-3 text-sm text-[#E2B6BD] hover:text-white hover:bg-[#1A0E12] rounded transition-colors"
+                    className="flex items-center justify-between py-2.5 px-3 text-sm text-[#F0E6E9] hover:text-white hover:bg-[#1A0E12] rounded transition-colors"
                   >
                     <span>Head of Department</span>
                     <span className="font-mono text-xs text-[#7F011F]">→</span>
