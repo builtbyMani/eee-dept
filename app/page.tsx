@@ -1,69 +1,332 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import Link from "next/link";
+import { motion } from "motion/react";
+import ProjectCard from "@/components/ui/ProjectCard";
+import HodSection from "@/components/ui/HodSection";
+import AchievementsShowcase from "@/components/ui/AchievementsShowcase";
+import Accordion from "@/components/ui/Accordion";
+import { tactileSpring, settleSpring } from "@/components/motion/SpringPhysics";
+
+const PROJECTS = [
+  {
+    name: "Hexawatts Racing Team",
+    domain: "Formula Student EV",
+    headline: "Where Power Meets Geometry, We Drive With Ingenuity.",
+    description:
+      "Student Formula Student electric racing team designing an open-wheel formula race car from scratch — custom battery pack, BMS, and aero. Formula Bharat 2026 debut (23rd), FB2027 build in progress, autonomous by 2028.",
+    imageSrc: "/images/hexawatts-logo.png",
+    href: "https://hexawatts-y8t9-flax.vercel.app/",
+    isExternal: true,
+    highlightBadge: "FORMULA BHARAT",
+  },
+  {
+    name: "AËTOS (ΑΕΤΟΣ)",
+    domain: "Aerial Robotics",
+    headline: "GNSS-Denied Autonomous Drone for ISRO IROC-U.",
+    description:
+      "Student aerospace robotics team advancing from functional UAV flight to fully autonomous visual-inertial navigation in GPS-denied environments for the national ISRO Robotics Challenge.",
+    imageSrc: "/images/aetos-logo.jpg",
+    href: "/aetos",
+    isExternal: false,
+    highlightBadge: "ISRO IROC-U",
+  },
+  {
+    name: "Autonomous Vehicle",
+    domain: "Autonomous Mobility",
+    headline: "Drive-by-Wire Conversion & Perception Stack.",
+    description:
+      "Converting utility chassis into self-driving testbeds. Implementing ROS2 sensor fusion (LiDAR, stereo cameras, IMU), trajectory planning, and fail-safe steer/brake actuators.",
+    imageSrc: "/images/av-schematic.svg",
+    href: "/autonomous-vehicle",
+    isExternal: false,
+    highlightBadge: "ROS2 & LIDAR",
+  },
+  {
+    name: "Planetary Rover Team",
+    domain: "Ground Robotics",
+    headline: "All-Terrain Planetary Rover for the IRC.",
+    description:
+      "Engineering a Mars/lunar analogue rover with rocker-bogie passive suspension, 5-DoF robotic manipulation arm, and science soil sampling cache for the International Rover Challenge.",
+    imageSrc: "/images/rover-schematic.svg",
+    href: "/rover",
+    isExternal: false,
+    highlightBadge: "IRC CHALLENGE",
+  },
+];
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="relative">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden min-h-[min(90vh,880px)] flex items-end pt-28 pb-16 border-b border-[#262626]">
+        {/* Animated Background Traces (Circuit Schematic Aesthetic) */}
+        <svg
+          className="pointer-events-none absolute right-0 top-0 w-[min(950px,100%)] h-full opacity-40 text-[#383838]"
+          viewBox="0 0 900 700"
+          preserveAspectRatio="xMaxYMid slice"
+          aria-hidden="true"
+        >
+          <motion.path
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ duration: 2.4, ease: "easeOut" }}
+            d="M900 120H640l-60 60H420v140h-120l-50 50v130H0"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.2"
+          />
+          <motion.path
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ duration: 2.8, delay: 0.3, ease: "easeOut" }}
+            d="M900 300h-180l-40 40v120H520l-40 40v100"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.2"
+          />
+          <motion.path
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ duration: 2.2, delay: 0.6, ease: "easeOut" }}
+            d="M900 520H760l-50-50M640 700V560h-80"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.2"
+          />
+        </svg>
+
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 w-full relative z-10">
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={settleSpring}
+            className="mono-label mb-4 text-[#808080]"
           >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            Department of Electrical &amp; Electronics Engineering
+          </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ ...settleSpring, delay: 0.1 }}
+            className="text-4xl sm:text-6xl lg:text-7xl font-normal text-white tracking-tighter leading-[1.04] mb-6 max-w-4xl"
           >
-            Documentation
-          </a>
+            We learn by building <br className="hidden sm:inline" />
+            machines that work.
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ ...settleSpring, delay: 0.15 }}
+            className="text-lg sm:text-xl text-[#808080] max-w-2xl leading-relaxed mb-10"
+          >
+            <span className="text-white">
+              Four student teams, four machines in progress.
+            </span>{" "}
+            Our department puts project-based learning first, so classroom
+            electromagnetic and control theory gets battle-tested on real hardware.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ ...settleSpring, delay: 0.2 }}
+            className="flex flex-wrap gap-4"
+          >
+            <motion.a
+              href="#projects"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              transition={tactileSpring}
+              className="px-6 py-3.5 bg-[#1f3fff] text-white font-mono text-xs uppercase tracking-wider flex items-center gap-6 group"
+            >
+              <span>Explore The Projects</span>
+              <span className="transition-transform group-hover:translate-y-0.5">
+                ↓
+              </span>
+            </motion.a>
+            <motion.a
+              href="#leadership"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              transition={tactileSpring}
+              className="px-6 py-3.5 bg-[#262626] text-white hover:bg-[#333333] font-mono text-xs uppercase tracking-wider flex items-center gap-6 group transition-colors"
+            >
+              <span>Head of Department</span>
+              <span className="transition-transform group-hover:translate-x-1">
+                →
+              </span>
+            </motion.a>
+            <motion.a
+              href="#achievements"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              transition={tactileSpring}
+              className="px-6 py-3.5 border border-[#333333] text-white hover:border-white font-mono text-xs uppercase tracking-wider flex items-center gap-6 group transition-colors"
+            >
+              <span>Milestones &amp; MSME</span>
+              <span className="transition-transform group-hover:translate-x-1">
+                →
+              </span>
+            </motion.a>
+          </motion.div>
         </div>
-      </main>
+      </section>
+
+      {/* Numerical Spec Strip */}
+      <section className="border-b border-[#262626] bg-[#0d0d0d]">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-[#262626]">
+            <div className="py-8 sm:py-10 pr-6">
+              <div className="font-mono text-4xl sm:text-6xl text-white font-light tracking-tight mb-2">
+                04
+              </div>
+              <p className="mono-label">Active Student Teams</p>
+            </div>
+            <div className="py-8 sm:py-10 sm:px-6">
+              <div className="font-mono text-4xl sm:text-6xl text-[#00e5ff] font-light tracking-tight mb-2">
+                ₹15L
+              </div>
+              <p className="mono-label">MSME 5.0 Grant Won</p>
+            </div>
+            <div className="py-8 sm:py-10 sm:px-6">
+              <div className="font-mono text-4xl sm:text-6xl text-[#f5a623] font-light tracking-tight mb-2">
+                60
+              </div>
+              <p className="mono-label">Years of Legacy (1965-2025)</p>
+            </div>
+            <div className="py-8 sm:py-10 sm:pl-6">
+              <div className="font-mono text-4xl sm:text-6xl text-white font-light tracking-tight mb-2">
+                03
+              </div>
+              <p className="mono-label">National Arenas (FB, ISRO, IRC)</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Showcase Section */}
+      <section id="projects" className="py-20 sm:py-28 border-b border-[#262626]">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-end mb-16">
+            <div>
+              <p className="mono-label mb-3 text-[#808080]">Engineering In The Metal</p>
+              <h2 className="text-3xl sm:text-5xl font-normal text-white tracking-tighter leading-tight">
+                Four projects, <br />
+                built by students.
+              </h2>
+            </div>
+            <p className="text-base sm:text-lg text-[#808080] leading-relaxed">
+              <span className="text-white">
+                Each team owns a real engineering challenge from first sketch to live competition.
+              </span>{" "}
+              Select a project to explore its architecture, leadership, and team roster.
+            </p>
+          </div>
+
+          {/* 2x2 Grid of Projects */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12">
+            {PROJECTS.map((proj, idx) => (
+              <ProjectCard key={proj.name} index={idx} {...proj} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Dedicated Head of Department Section */}
+      <div id="leadership">
+        <HodSection />
+      </div>
+
+      {/* Upgraded Achievements & MSME Showcase with Smooth Apple Scroll Track */}
+      <section id="achievements" className="py-20 sm:py-28 border-b border-[#262626] bg-[#090909]">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-end mb-12">
+            <div>
+              <p className="mono-label mb-3 text-[#f5a623]">Department Record of Excellence</p>
+              <h2 className="text-3xl sm:text-5xl font-normal text-white tracking-tighter leading-tight">
+                Achievements, Grants &amp; <br />
+                National Podiums.
+              </h2>
+            </div>
+            <p className="text-base sm:text-lg text-[#808080] leading-relaxed">
+              <span className="text-white">Real hardware produces real results.</span> From central government grants
+              to national robotics podiums and 60 years of institutional leadership, explore our verified milestones.
+            </p>
+          </div>
+
+          {/* Interactive Wide-Card Horizontal Scroll Track */}
+          <AchievementsShowcase />
+        </div>
+      </section>
+
+      {/* How a Project Runs (Accordion) */}
+      <section id="approach" className="py-20 sm:py-28 border-b border-[#262626]">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-end mb-16">
+            <div>
+              <p className="mono-label mb-3 text-[#808080]">Engineering Methodology</p>
+              <h2 className="text-3xl sm:text-5xl font-normal text-white tracking-tighter leading-tight">
+                How a project runs.
+              </h2>
+            </div>
+            <p className="text-base sm:text-lg text-[#808080] leading-relaxed">
+              Every team adheres to a structured four-phase development lifecycle.
+              What changes is the physical domain and the engineering problem being solved.
+            </p>
+          </div>
+
+          <Accordion />
+        </div>
+      </section>
+
+      {/* Call to Action Section */}
+      <section id="join" className="py-24 sm:py-32">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-8">
+          <div className="max-w-3xl">
+            <p className="mono-label mb-4 text-[#808080]">
+              Open To Students, Alumni &amp; Industry
+            </p>
+            <h2 className="text-3xl sm:text-6xl font-normal text-white tracking-tighter leading-tight mb-6">
+              Want to build with us <br />
+              or back a machine?
+            </h2>
+            <p className="text-base sm:text-xl text-[#808080] leading-relaxed mb-10">
+              <span className="text-white">
+                Undergraduate students can inquire with team leads for domain openings.
+              </span>{" "}
+              Industry partners, alumni, and sponsors can propose technical collaborations,
+              mentorship, or lab equipment sponsorships.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <motion.a
+                href="https://www.linkedin.com/company/department-of-electrical-and-electronics-engineering-jntuh-ucesth/"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.97 }}
+                transition={tactileSpring}
+                className="px-6 py-3.5 bg-[#1f3fff] text-white font-mono text-xs uppercase tracking-wider flex items-center gap-6 group"
+              >
+                <span>Propose Collaboration On LinkedIn</span>
+                <span className="transition-transform group-hover:translate-x-1">↗</span>
+              </motion.a>
+              <motion.a
+                href="https://hexawatts-y8t9-flax.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.97 }}
+                transition={tactileSpring}
+                className="px-6 py-3.5 bg-[#262626] text-white hover:bg-[#333333] font-mono text-xs uppercase tracking-wider flex items-center gap-6 group transition-colors"
+              >
+                <span>Sponsor Hexawatts Racing</span>
+                <span className="transition-transform group-hover:translate-x-1">↗</span>
+              </motion.a>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
