@@ -31,15 +31,15 @@ export default function FieldHorizontalRowsBg({
           baseColor="#E2E2E2"
           accentColor="#FF2A55"
           speed={24}
-          scale={23}
+          scale={25}
           hover={120}
           activity={75}
           slant={45}
           advanced={{
             rowCount: 12,
             tickPitch: 2,
-            tickWidth: 30,
-            tickLength: 20,
+            tickWidth: 33,
+            tickLength: 22,
             maxCrawls: 8,
             crawlSpeed: 480,
             pointerRadius: 90,

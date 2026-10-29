@@ -28,8 +28,8 @@
   --color-muted: #C5B0B7;
   --color-border: #2D141A;
   --color-brand: #7F011F;
-  --font-heading: var(--font-heading), 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-sans: var(--font-heading), 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: "magari-variable", 'Raleway', var(--font-heading), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'Raleway', var(--font-heading), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: var(--font-mono), 'DM Mono', ui-monospace, Menlo, Consolas, monospace;
 }
 
@@ -102,11 +102,16 @@ body {
   background-color: currentColor;
 }
 
-/* Magari Editorial Styling */
+/* Magari Editorial & Variable Styling */
+.example,
 .font-magari {
-  font-family: var(--font-heading);
-  letter-spacing: -0.03em;
-  font-weight: 500;
+  font-family: "magari-variable", 'Raleway', sans-serif;
+  font-variation-settings: 'wght' 400;
+}
+
+h1, h2, h3, .font-heading {
+  font-family: "magari-variable", 'Raleway', var(--font-heading), sans-serif;
+  font-variation-settings: 'wght' 400;
 }
 
 /* Selection and Scrollbar */

@@ -89,7 +89,7 @@ export default function HomePage() {
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ ...settleSpring, delay: 0.1 }}
-                  className="text-4xl sm:text-6xl lg:text-7xl font-normal text-white font-heading tracking-tight sm:tracking-tighter leading-[1.04]"
+                  className="text-4xl sm:text-6xl lg:text-7xl font-normal text-white font-heading font-magari tracking-tight sm:tracking-tighter leading-[1.04]"
                 >
                   We learn by building <br className="hidden sm:inline" />
                   machines that work.

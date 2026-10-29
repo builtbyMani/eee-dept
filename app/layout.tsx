@@ -79,9 +79,17 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${raleway.variable} ${dmMono.variable} dark scroll-smooth`}
     >
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body
         suppressHydrationWarning
-        className="min-h-[100dvh] flex flex-col bg-[#090909] text-[#E2B6BD] antialiased selection:bg-[#7F011F] selection:text-white max-w-[100vw] overflow-x-hidden font-sans"
+        className="min-h-[100dvh] flex flex-col bg-[#090909] text-[#F0E6E9] antialiased selection:bg-[#7F011F] selection:text-white max-w-[100vw] overflow-x-hidden font-sans"
       >
         <Navbar />
         <main className="flex-1 w-full max-w-[100vw] overflow-x-hidden">{children}</main>
