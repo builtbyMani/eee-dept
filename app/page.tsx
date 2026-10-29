@@ -65,7 +65,7 @@ export default function HomePage() {
       <FieldHorizontalRowsBg />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden min-h-[min(90vh,880px)] flex items-center pt-32 sm:pt-40 lg:pt-44 pb-16 sm:pb-24 border-b border-[#2D141A]">
+      <section className="relative overflow-hidden min-h-[min(90vh,880px)] flex items-center pt-32 sm:pt-40 lg:pt-44 pb-16 sm:pb-24 border-b border-[#D9CAA8]">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-8 w-full relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             {/* Left Column: Heading, Subhead & Action CTAs (7 cols) */}
@@ -77,8 +77,8 @@ export default function HomePage() {
                 transition={settleSpring}
                 className="flex items-center gap-3 mb-6"
               >
-                <span className="w-2.5 h-2.5 rounded-full bg-[#FF2E5B] shadow-[0_0_12px_#FF2E5B] animate-pulse shrink-0" />
-                <span className="font-heading font-bold text-base sm:text-lg md:text-xl uppercase tracking-wider text-[#FF3358]">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#7F011F] shadow-[0_0_10px_rgba(127,1,31,0.4)] animate-pulse shrink-0" />
+                <span className="font-heading font-bold text-base sm:text-lg md:text-xl uppercase tracking-wider text-[#7F011F]">
                   Department of Electrical &amp; Electronics Engineering
                 </span>
               </motion.div>
@@ -89,7 +89,7 @@ export default function HomePage() {
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ ...settleSpring, delay: 0.1 }}
-                  className="text-4xl sm:text-6xl lg:text-7xl font-normal text-white font-heading font-magari tracking-tight sm:tracking-tighter leading-[1.04]"
+                  className="text-4xl sm:text-6xl lg:text-7xl font-normal text-[#181113] font-heading font-magari tracking-tight sm:tracking-tighter leading-[1.04]"
                 >
                   We learn by building <br className="hidden sm:inline" />
                   machines that work.
@@ -100,9 +100,9 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ ...settleSpring, delay: 0.15 }}
-                className="text-lg sm:text-xl text-[#F0E6E9] max-w-2xl leading-relaxed mb-10"
+                className="text-lg sm:text-xl text-[#3E3033] max-w-2xl leading-relaxed mb-10"
               >
-                <span className="text-white font-medium">
+                <span className="text-[#181113] font-semibold">
                   Four student teams, four machines in progress.
                 </span>{" "}
                 Our department puts project-based learning first, so classroom
@@ -121,7 +121,7 @@ export default function HomePage() {
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.97 }}
                   transition={tactileSpring}
-                  className="px-6 py-3.5 bg-[#7F011F] hover:bg-[#A31D36] text-white font-mono text-xs uppercase tracking-wider flex items-center gap-4 group transition-all shadow-[0_0_20px_rgba(127,1,31,0.4)] cursor-pointer"
+                  className="px-6 py-3.5 bg-[#7F011F] hover:bg-[#9B1832] text-white font-mono text-xs uppercase tracking-wider flex items-center gap-4 group transition-all shadow-[0_4px_20px_rgba(127,1,31,0.25)] cursor-pointer"
                 >
                   <span>Explore The Machines</span>
                   <span className="transition-transform group-hover:translate-y-0.5">
@@ -133,10 +133,10 @@ export default function HomePage() {
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.97 }}
                   transition={tactileSpring}
-                  className="px-6 py-3.5 bg-[#160A0D] text-[#E2B6BD] hover:text-white hover:bg-[#250F15] border border-[#2D141A] font-mono text-xs uppercase tracking-wider flex items-center gap-4 group transition-colors cursor-pointer"
+                  className="px-6 py-3.5 bg-[#EAE0C5] text-[#181113] hover:text-[#7F011F] hover:bg-[#E0D4B5] border border-[#D9CAA8] font-mono text-xs uppercase tracking-wider flex items-center gap-4 group transition-colors cursor-pointer"
                 >
                   <span>Head of Department</span>
-                  <span className="transition-transform group-hover:translate-x-1 text-[#FF4D6D]">
+                  <span className="transition-transform group-hover:translate-x-1 text-[#7F011F]">
                     →
                   </span>
                 </motion.a>
@@ -146,38 +146,38 @@ export default function HomePage() {
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.97 }}
                   transition={tactileSpring}
-                  className="px-6 py-3.5 border border-[#2D141A] hover:border-[#7F011F] text-[#E2B6BD] hover:text-white font-mono text-xs uppercase tracking-wider flex items-center gap-4 group transition-colors cursor-pointer"
+                  className="px-6 py-3.5 border border-[#D9CAA8] hover:border-[#7F011F] bg-[#F5EBD0]/70 text-[#181113] hover:text-[#7F011F] font-mono text-xs uppercase tracking-wider flex items-center gap-4 group transition-colors cursor-pointer"
                 >
                   <span>Join A Machine Team</span>
-                  <span className="transition-transform group-hover:translate-x-1 text-[#FF4D6D]">
+                  <span className="transition-transform group-hover:translate-x-1 text-[#7F011F]">
                     ↗
                   </span>
                 </motion.button>
               </motion.div>
             </div>
 
-            {/* Right Column: Seamless High-Voltage Discharge Image (Enlarged, Zero Borders, No Text) */}
+            {/* Right Column: High-Voltage Laboratory Discharge Display */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
               className="lg:col-span-5 relative flex items-center justify-center"
             >
-              {/* Soft Ambient Wine Red Glow Behind Coil */}
+              {/* Soft Ambient Wine Glow Behind Display */}
               <div
-                className="pointer-events-none absolute w-[420px] h-[420px] rounded-full bg-[#7F011F]/25 blur-[120px] z-0"
+                className="pointer-events-none absolute w-[420px] h-[420px] rounded-full bg-[#7F011F]/15 blur-[120px] z-0"
                 aria-hidden="true"
               />
 
-              {/* Masked High-Resolution Transparent Discharge */}
-              <div className="relative w-full max-w-[460px] lg:max-w-[520px] aspect-[868/1024] flex items-center justify-center z-10 group">
+              {/* Specimen Exhibition Case with High-Voltage Plasma Arc */}
+              <div className="relative w-full max-w-[460px] lg:max-w-[500px] aspect-[868/1024] bg-[#140B0E] rounded-3xl border border-[#D9CAA8] shadow-[0_20px_50px_rgba(70,25,35,0.14)] p-4 flex items-center justify-center overflow-hidden group z-10">
                 <Image
                   src="/images/high-voltage-arc.png"
                   alt="High-Voltage Laboratory Arc Discharge"
                   fill
                   priority
-                  sizes="(max-width: 1024px) 440px, 520px"
-                  className="object-contain filter contrast-110 brightness-105 group-hover:scale-105 transition-transform duration-700 pointer-events-none"
+                  sizes="(max-width: 1024px) 440px, 500px"
+                  className="object-contain filter contrast-110 brightness-105 group-hover:scale-105 transition-transform duration-700 pointer-events-none p-2"
                 />
               </div>
             </motion.div>
@@ -186,50 +186,50 @@ export default function HomePage() {
       </section>
 
       {/* Numerical Spec Strip */}
-      <section className="relative z-10 border-b border-[#2D141A] bg-[#0C0608]/95 backdrop-blur-sm">
+      <section className="relative z-10 border-b border-[#D9CAA8] bg-[#EFE3C3]/80 backdrop-blur-sm">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-[#2D141A]">
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-[#D9CAA8]">
             <div className="py-8 sm:py-10 pr-6">
-              <div className="font-mono text-4xl sm:text-6xl text-white font-light tracking-tight mb-2 font-heading">
+              <div className="font-mono text-4xl sm:text-6xl text-[#181113] font-light tracking-tight mb-2 font-heading">
                 04
               </div>
-              <p className="mono-label text-[#D4C4C8]">Active Student Machines</p>
+              <p className="mono-label text-[#6E5D61]">Active Student Machines</p>
             </div>
             <div className="py-8 sm:py-10 sm:px-6">
-              <div className="font-mono text-4xl sm:text-6xl text-[#FF4D6D] font-light tracking-tight mb-2 font-heading">
+              <div className="font-mono text-4xl sm:text-6xl text-[#7F011F] font-light tracking-tight mb-2 font-heading">
                 ₹15L
               </div>
-              <p className="mono-label text-[#D4C4C8]">MSME 5.0 Grant Won</p>
+              <p className="mono-label text-[#6E5D61]">MSME 5.0 Grant Won</p>
             </div>
             <div className="py-8 sm:py-10 sm:px-6">
-              <div className="font-mono text-4xl sm:text-6xl text-[#F0E6E9] font-light tracking-tight mb-2 font-heading">
+              <div className="font-mono text-4xl sm:text-6xl text-[#181113] font-light tracking-tight mb-2 font-heading">
                 60
               </div>
-              <p className="mono-label text-[#D4C4C8]">Years of Legacy (1965-2025)</p>
+              <p className="mono-label text-[#6E5D61]">Years of Legacy (1965-2025)</p>
             </div>
             <div className="py-8 sm:py-10 sm:pl-6">
-              <div className="font-mono text-4xl sm:text-6xl text-white font-light tracking-tight mb-2 font-heading">
+              <div className="font-mono text-4xl sm:text-6xl text-[#181113] font-light tracking-tight mb-2 font-heading">
                 03
               </div>
-              <p className="mono-label text-[#D4C4C8]">National Arenas (FB, ISRO, IRC)</p>
+              <p className="mono-label text-[#6E5D61]">National Arenas (FB, ISRO, IRC)</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Projects Showcase Section */}
-      <section id="projects" className="relative z-10 py-20 sm:py-28 border-b border-[#2D141A] bg-[#090909]/92 backdrop-blur-[2px]">
+      <section id="projects" className="relative z-10 py-20 sm:py-28 border-b border-[#D9CAA8] bg-[#F5EBD0]/95 backdrop-blur-[2px]">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-end mb-16">
             <div>
-              <p className="mono-label mb-3 text-[#FF4D6D]">Engineering In The Metal</p>
-              <h2 className="text-3xl sm:text-5xl font-semibold text-white font-heading tracking-tight leading-tight">
+              <p className="mono-label mb-3 text-[#7F011F]">Engineering In The Metal</p>
+              <h2 className="text-3xl sm:text-5xl font-semibold text-[#181113] font-heading tracking-tight leading-tight">
                 Four machines, <br />
                 built by students.
               </h2>
             </div>
-            <p className="text-base sm:text-lg text-[#E8DCE0] leading-relaxed">
-              <span className="text-white font-medium">
+            <p className="text-base sm:text-lg text-[#3E3033] leading-relaxed">
+              <span className="text-[#181113] font-semibold">
                 Each team owns a real engineering challenge from first sketch to live competition.
               </span>{" "}
               Select a project to explore its architecture, leadership, and team roster.
@@ -251,18 +251,18 @@ export default function HomePage() {
       </div>
 
       {/* Upgraded Achievements & MSME Showcase */}
-      <section id="achievements" className="relative z-10 py-20 sm:py-28 border-b border-[#2D141A] bg-[#090909]/95 backdrop-blur-[2px]">
+      <section id="achievements" className="relative z-10 py-20 sm:py-28 border-b border-[#D9CAA8] bg-[#F5EBD0]/95 backdrop-blur-[2px]">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-end mb-12">
             <div>
-              <p className="mono-label mb-3 text-[#FF4D6D]">Department Record of Excellence</p>
-              <h2 className="text-3xl sm:text-5xl font-semibold text-white font-heading tracking-tight leading-tight">
+              <p className="mono-label mb-3 text-[#7F011F]">Department Record of Excellence</p>
+              <h2 className="text-3xl sm:text-5xl font-semibold text-[#181113] font-heading tracking-tight leading-tight">
                 Achievements, Grants &amp; <br />
                 National Podiums.
               </h2>
             </div>
-            <p className="text-base sm:text-lg text-[#E8DCE0] leading-relaxed">
-              <span className="text-white font-medium">Real hardware produces real results.</span> From central government grants
+            <p className="text-base sm:text-lg text-[#3E3033] leading-relaxed">
+              <span className="text-[#181113] font-semibold">Real hardware produces real results.</span> From central government grants
               to national robotics podiums and 60 years of institutional leadership, explore our verified milestones.
             </p>
           </div>
@@ -273,16 +273,16 @@ export default function HomePage() {
       </section>
 
       {/* How a Project Runs (Accordion) */}
-      <section id="approach" className="relative z-10 py-20 sm:py-28 border-b border-[#2D141A] bg-[#090909]/92 backdrop-blur-[2px]">
+      <section id="approach" className="relative z-10 py-20 sm:py-28 border-b border-[#D9CAA8] bg-[#F5EBD0]/95 backdrop-blur-[2px]">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-end mb-16">
             <div>
-              <p className="mono-label mb-3 text-[#FF4D6D]">Engineering Methodology</p>
-              <h2 className="text-3xl sm:text-5xl font-semibold text-white font-heading tracking-tight leading-tight">
+              <p className="mono-label mb-3 text-[#7F011F]">Engineering Methodology</p>
+              <h2 className="text-3xl sm:text-5xl font-semibold text-[#181113] font-heading tracking-tight leading-tight">
                 How a project runs.
               </h2>
             </div>
-            <p className="text-base sm:text-lg text-[#E8DCE0] leading-relaxed">
+            <p className="text-base sm:text-lg text-[#3E3033] leading-relaxed">
               Every team adheres to a structured four-phase development lifecycle.
               What changes is the physical domain and the engineering problem being solved.
             </p>
@@ -293,24 +293,24 @@ export default function HomePage() {
       </section>
 
       {/* Call to Action Section */}
-      <section id="join" className="relative z-10 py-24 sm:py-32 overflow-hidden bg-[#090909]/95">
+      <section id="join" className="relative z-10 py-24 sm:py-32 overflow-hidden bg-[#EFE3C3]/75 border-b border-[#D9CAA8]">
         {/* Ambient Wine Red Glow */}
         <div
-          className="pointer-events-none absolute -bottom-40 right-10 w-[600px] h-[400px] bg-[#7F011F]/15 blur-[140px]"
+          className="pointer-events-none absolute -bottom-40 right-10 w-[600px] h-[400px] bg-[#7F011F]/10 blur-[140px]"
           aria-hidden="true"
         />
 
         <div className="max-w-[1440px] mx-auto px-4 sm:px-8 relative z-10">
           <div className="max-w-3xl">
-            <p className="mono-label mb-4 text-[#FF4D6D]">
+            <p className="mono-label mb-4 text-[#7F011F]">
               Open To Students, Alumni &amp; Industry
             </p>
-            <h2 className="text-3xl sm:text-6xl font-semibold text-white font-heading tracking-tight leading-tight mb-6">
+            <h2 className="text-3xl sm:text-6xl font-semibold text-[#181113] font-heading tracking-tight leading-tight mb-6">
               Want to build with us <br />
               or back a machine?
             </h2>
-            <p className="text-base sm:text-xl text-[#E8DCE0] leading-relaxed mb-10">
-              <span className="text-white font-medium">
+            <p className="text-base sm:text-xl text-[#3E3033] leading-relaxed mb-10">
+              <span className="text-[#181113] font-semibold">
                 Undergraduate students can inquire with team leads for domain openings.
               </span>{" "}
               Industry partners, alumni, and sponsors can propose technical collaborations,
@@ -323,7 +323,7 @@ export default function HomePage() {
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.97 }}
                 transition={tactileSpring}
-                className="px-6 py-3.5 bg-[#7F011F] hover:bg-[#A31D36] text-white font-mono text-xs uppercase tracking-wider flex items-center gap-4 group transition-all shadow-[0_0_20px_rgba(127,1,31,0.35)] cursor-pointer"
+                className="px-6 py-3.5 bg-[#7F011F] hover:bg-[#9B1832] text-white font-mono text-xs uppercase tracking-wider flex items-center gap-4 group transition-all shadow-[0_4px_20px_rgba(127,1,31,0.25)] cursor-pointer"
               >
                 <span>Propose Technical Collaboration</span>
                 <span className="transition-transform group-hover:translate-x-1">→</span>
@@ -335,10 +335,10 @@ export default function HomePage() {
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.97 }}
                 transition={tactileSpring}
-                className="px-6 py-3.5 bg-[#160A0D] text-[#E2B6BD] hover:text-white hover:bg-[#250F15] border border-[#2D141A] font-mono text-xs uppercase tracking-wider flex items-center gap-4 group transition-colors cursor-pointer"
+                className="px-6 py-3.5 bg-[#EAE0C5] text-[#181113] hover:text-[#7F011F] hover:bg-[#E0D4B5] border border-[#D9CAA8] font-mono text-xs uppercase tracking-wider flex items-center gap-4 group transition-colors cursor-pointer"
               >
                 <span>Sponsor Hexawatts Racing</span>
-                <span className="transition-transform group-hover:translate-x-1 text-[#FF4D6D]">↗</span>
+                <span className="transition-transform group-hover:translate-x-1 text-[#7F011F]">↗</span>
               </motion.a>
               <motion.a
                 href="https://www.linkedin.com/company/department-of-electrical-and-electronics-engineering-jntuh-ucesth/"
@@ -347,10 +347,10 @@ export default function HomePage() {
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.97 }}
                 transition={tactileSpring}
-                className="px-6 py-3.5 border border-[#2D141A] hover:border-[#7F011F] text-[#E8DCE0] hover:text-white font-mono text-xs uppercase tracking-wider flex items-center gap-4 group transition-colors cursor-pointer"
+                className="px-6 py-3.5 border border-[#D9CAA8] hover:border-[#7F011F] bg-[#F5EBD0] text-[#3E3033] hover:text-[#7F011F] font-mono text-xs uppercase tracking-wider flex items-center gap-4 group transition-colors cursor-pointer"
               >
                 <span>Department LinkedIn</span>
-                <span className="transition-transform group-hover:translate-x-1 text-[#FF4D6D]">↗</span>
+                <span className="transition-transform group-hover:translate-x-1 text-[#7F011F]">↗</span>
               </motion.a>
             </div>
           </div>

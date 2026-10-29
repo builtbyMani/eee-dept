@@ -1,32 +1,36 @@
 @import "tailwindcss";
 
 :root {
-  --dark: #090909;
-  --dark-warm: #0E0709;
+  --dark: #F5EBD0;
+  --sand: #F5EBD0;
+  --sand-warm: #EFE3C3;
+  --sand-deep: #E7D8B1;
   --wine: #7F011F;
-  --wine-dark: #4A0112;
-  --wine-light: #A31D36;
-  --wine-accent: #FF4D6D;
-  --wine-glow: rgba(127, 1, 31, 0.45);
+  --wine-dark: #5C0016;
+  --wine-light: #9B1832;
+  --wine-accent: #7F011F;
+  --wine-glow: rgba(127, 1, 31, 0.25);
   --white: #ffffff;
-  --lead: #F0E6E9;
-  --body: #E8DCE0;
-  --muted: #C5B0B7;
-  --border: #2D141A;
+  --lead: #181113;
+  --body: #3E3033;
+  --muted: #6E5D61;
+  --border: #D9CAA8;
   --border-hover: #7F011F;
 }
 
 @theme {
-  --color-dark: #090909;
-  --color-dark-warm: #0E0709;
+  --color-dark: #F5EBD0;
+  --color-sand: #F5EBD0;
+  --color-sand-warm: #EFE3C3;
+  --color-sand-deep: #E7D8B1;
   --color-wine: #7F011F;
-  --color-wine-dark: #4A0112;
-  --color-wine-light: #A31D36;
-  --color-wine-accent: #FF4D6D;
-  --color-lead: #F0E6E9;
-  --color-body: #E8DCE0;
-  --color-muted: #C5B0B7;
-  --color-border: #2D141A;
+  --color-wine-dark: #5C0016;
+  --color-wine-light: #9B1832;
+  --color-wine-accent: #7F011F;
+  --color-lead: #181113;
+  --color-body: #3E3033;
+  --color-muted: #6E5D61;
+  --color-border: #D9CAA8;
   --color-brand: #7F011F;
   --font-heading: "magari-variable", 'Raleway', var(--font-heading), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-sans: 'Raleway', var(--font-heading), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -34,8 +38,8 @@
 }
 
 html {
-  color-scheme: dark;
-  background-color: var(--dark);
+  color-scheme: light;
+  background-color: var(--sand);
   color: var(--lead);
   font-family: var(--font-sans);
   scroll-behavior: smooth;
@@ -45,8 +49,8 @@ html {
 }
 
 body {
-  background-color: var(--dark);
-  color: var(--lead);
+  background-color: var(--sand);
+  color: var(--body);
   margin: 0;
   min-height: 100dvh;
   max-width: 100vw;
@@ -57,18 +61,18 @@ body {
 
 /* Glass Header & Surfaces */
 .glass-header {
-  background: rgba(9, 9, 9, 0.88);
+  background: rgba(245, 235, 208, 0.88);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
 }
 
 .glass-card {
-  background: rgba(18, 10, 13, 0.65);
+  background: rgba(239, 227, 195, 0.7);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border);
-  box-shadow: inset 0 1px 0 rgba(255, 77, 109, 0.08);
+  box-shadow: 0 4px 20px -2px rgba(70, 30, 40, 0.04);
 }
 
 .glass-card-hover {
@@ -76,9 +80,9 @@ body {
 }
 
 .glass-card-hover:hover {
-  border-color: rgba(127, 1, 31, 0.65);
-  background: rgba(28, 14, 18, 0.8);
-  box-shadow: 0 10px 30px -10px rgba(127, 1, 31, 0.35);
+  border-color: rgba(127, 1, 31, 0.5);
+  background: rgba(245, 235, 208, 0.95);
+  box-shadow: 0 12px 32px -8px rgba(127, 1, 31, 0.15);
 }
 
 /* Monospace dot badge */
@@ -88,7 +92,7 @@ body {
   line-height: 1.4;
   letter-spacing: 0.09em;
   text-transform: uppercase;
-  color: var(--body);
+  color: var(--wine);
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -125,11 +129,11 @@ h1, h2, h3, .font-heading {
 }
 
 ::-webkit-scrollbar-track {
-  background: #090909;
+  background: #F5EBD0;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #3D121B;
+  background: #D9CAA8;
   border-radius: 4px;
 }
 

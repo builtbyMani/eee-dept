@@ -149,21 +149,21 @@ export default function AchievementsShowcase() {
   return (
     <div className="relative">
       {/* Top Filter Tabs */}
-      <div className="flex flex-wrap items-center gap-2 mb-10 pb-6 border-b border-[#2D141A]">
+      <div className="flex flex-wrap items-center gap-2 mb-10 pb-6 border-b border-[#D9CAA8]">
         {FILTER_TABS.map((tab) => {
           const isActive = activeTab === tab.key;
           return (
             <button
               key={tab.key}
               onClick={() => setActiveTab(tab.key)}
-              className={`relative px-4 py-2 font-mono text-xs uppercase tracking-wider transition-colors cursor-pointer ${
-                isActive ? "text-white font-medium" : "text-[#D4C4C8] hover:text-white"
+              className={`relative px-4 py-2 font-mono text-xs uppercase tracking-wider transition-colors cursor-pointer rounded-full ${
+                isActive ? "text-white font-medium" : "text-[#554347] hover:text-[#181113]"
               }`}
             >
               {isActive && (
                 <motion.div
                   layoutId="activeTabBadge"
-                  className="absolute inset-0 bg-[#7F011F] border border-[#A31D36] shadow-[0_0_15px_rgba(127,1,31,0.4)]"
+                  className="absolute inset-0 bg-[#7F011F] rounded-full shadow-[0_4px_16px_rgba(127,1,31,0.25)]"
                   transition={settleSpring}
                 />
               )}
@@ -185,66 +185,66 @@ export default function AchievementsShowcase() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.98 }}
                 transition={settleSpring}
-                className="w-full p-8 sm:p-10 border border-[#2D141A] bg-[#0E0608]/95 hover:border-[#7F011F] transition-all flex flex-col justify-between relative group overflow-hidden shadow-[inset_0_0_30px_rgba(127,1,31,0.04)]"
+                className="w-full p-8 sm:p-10 border border-[#D9CAA8] bg-[#EFE3C3]/75 hover:border-[#7F011F] transition-all flex flex-col justify-between relative group overflow-hidden shadow-[0_4px_24px_rgba(70,30,40,0.04)] rounded-2xl"
               >
                 {/* Accent Top Border */}
-                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#FF4D6D] to-transparent opacity-80" />
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#7F011F] to-transparent opacity-80" />
 
                 <div>
                   {/* Top Header: Tag & Date */}
                   <div className="flex items-center justify-between gap-4 mb-6">
-                    <span className="font-mono text-[11px] text-[#FF5A7A] uppercase tracking-wider font-medium">
+                    <span className="font-mono text-[11px] text-[#7F011F] uppercase tracking-wider font-semibold">
                       {item.categoryLabel}
                     </span>
-                    <span className="font-mono text-xs text-[#E2D4D8] border border-[#3D1A22] bg-[#1A0A0E] px-2.5 py-0.5">
+                    <span className="font-mono text-xs text-[#554347] border border-[#D9CAA8] bg-[#EAE0C5] px-2.5 py-0.5 rounded">
                       {item.date}
                     </span>
                   </div>
 
                   {/* Main Callout & Badge Row */}
                   <div className="flex flex-wrap items-baseline justify-between gap-4 mb-4">
-                    <div className="font-mono text-3xl sm:text-5xl font-semibold tracking-tight text-white font-heading">
+                    <div className="font-mono text-3xl sm:text-5xl font-semibold tracking-tight text-[#181113] font-heading">
                       {item.statCallout}
                     </div>
-                    <span className="font-mono text-xs uppercase px-2.5 py-1 border bg-[#7F011F]/25 border-[#7F011F]/60 text-[#FF4D6D] font-medium shadow-[0_0_12px_rgba(127,1,31,0.3)]">
+                    <span className="font-mono text-xs uppercase px-2.5 py-1 border bg-[#7F011F]/10 border-[#7F011F]/30 text-[#7F011F] font-medium rounded shadow-[0_2px_8px_rgba(127,1,31,0.08)]">
                       ★ {item.badge}
                     </span>
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl sm:text-2xl font-semibold text-white font-heading tracking-tight mb-2 leading-snug">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-[#181113] font-heading tracking-tight mb-2 leading-snug">
                     {item.title}
                   </h3>
 
                   {/* Student & Faculty Names */}
-                  <p className="font-mono text-xs text-[#FF85A0] mb-4">
+                  <p className="font-mono text-xs text-[#7F011F] mb-4 font-medium">
                     {item.students}
                   </p>
 
                   {/* Narrative Context (High Contrast & Legible) */}
-                  <p className="text-sm sm:text-base text-[#E8DCE0] leading-relaxed mb-6 font-normal">
+                  <p className="text-sm sm:text-base text-[#3E3033] leading-relaxed mb-6 font-normal">
                     {item.summary}
                   </p>
                 </div>
 
                 {/* Bottom Verified Status or LinkedIn Link */}
-                <div className="pt-6 border-t border-[#2D141A] flex items-center justify-between font-mono text-xs">
+                <div className="pt-6 border-t border-[#D9CAA8] flex items-center justify-between font-mono text-xs">
                   {item.link ? (
                     <a
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#F0E6E9] hover:text-white inline-flex items-center gap-2 transition-colors group/link font-medium"
+                      className="text-[#7F011F] hover:text-[#9B1832] inline-flex items-center gap-2 transition-colors group/link font-medium"
                     >
                       <span>Verified Post on Department LinkedIn</span>
-                      <span className="text-[#FF4D6D] transition-transform group-hover/link:translate-x-1">↗</span>
+                      <span className="text-[#7F011F] transition-transform group-hover/link:translate-x-1">↗</span>
                     </a>
                   ) : (
-                    <span className="text-[#A38890]">
+                    <span className="text-[#6E5D61]">
                       OFFICIAL DEPARTMENT ARCHIVE · 2026
                     </span>
                   )}
-                  <span className="text-[#D4C4C8]">
+                  <span className="text-[#6E5D61]">
                     #{String(idx + 1).padStart(2, "0")}
                   </span>
                 </div>

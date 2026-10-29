@@ -35,35 +35,35 @@ export default function LeadCard({
       whileHover={{ y: -4 }}
       whileTap={{ scale: 0.98 }}
       transition={tactileSpring}
-      className="glass-card glass-card-hover p-6 sm:p-7 flex flex-col justify-between relative group border-[#2D141A]"
+      className="glass-card glass-card-hover p-6 sm:p-7 flex flex-col justify-between relative group border-[#D9CAA8] bg-[#EFE3C3]/70 rounded-2xl"
     >
       <div>
         {/* Top Badge & Initials */}
         <div className="flex items-center justify-between gap-4 mb-6">
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#7F011F]/15 border border-[#7F011F]/40 text-[#FF4D6D] font-mono text-[11px] uppercase tracking-wider font-medium">
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#7F011F]/10 border border-[#7F011F]/30 text-[#7F011F] font-mono text-[11px] uppercase tracking-wider font-semibold rounded">
             ★ {badge}
           </span>
-          <div className="w-10 h-10 border border-[#7F011F]/30 bg-[#160A0D] text-white flex items-center justify-center font-mono text-xs font-medium shadow-[0_0_15px_rgba(127,1,31,0.2)]">
+          <div className="w-10 h-10 border border-[#D9CAA8] bg-[#EAE0C5] text-[#181113] flex items-center justify-center font-mono text-xs font-semibold rounded-lg shadow-sm">
             {initials}
           </div>
         </div>
 
         {/* Name and Designation */}
-        <h3 className="text-xl sm:text-2xl font-semibold text-white font-heading tracking-tight mb-1">
+        <h3 className="text-xl sm:text-2xl font-semibold text-[#181113] font-heading tracking-tight mb-1">
           {name}
         </h3>
-        <p className="text-sm text-[#FF4D6D] font-mono mb-1 font-medium">{role}</p>
-        <p className="text-xs text-[#E8DCE0] mb-5">{department}</p>
+        <p className="text-sm text-[#7F011F] font-mono mb-1 font-semibold">{role}</p>
+        <p className="text-xs text-[#554347] mb-5">{department}</p>
 
         {/* Accolades / Hackathon Win Badges if any */}
         {achievements.length > 0 && (
-          <div className="space-y-1.5 mb-6 pt-4 border-t border-[#2D141A]">
+          <div className="space-y-1.5 mb-6 pt-4 border-t border-[#D9CAA8]">
             {achievements.map((ach, idx) => (
               <div
                 key={idx}
-                className="text-[11px] font-mono text-[#F0E6E9] flex items-start gap-2"
+                className="text-[11px] font-mono text-[#3E3033] flex items-start gap-2"
               >
-                <span className="text-[#FF4D6D] mt-0.5">•</span>
+                <span className="text-[#7F011F] mt-0.5 font-bold">•</span>
                 <span>{ach}</span>
               </div>
             ))}
@@ -77,11 +77,11 @@ export default function LeadCard({
           href={linkedinUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-4 pt-4 border-t border-[#2D141A] flex items-center justify-between text-xs font-mono text-[#E8DCE0] group-hover:text-white transition-colors"
+          className="mt-4 pt-4 border-t border-[#D9CAA8] flex items-center justify-between text-xs font-mono text-[#7F011F] hover:text-[#9B1832] transition-colors font-medium"
         >
           <span className="flex items-center gap-2">
             <svg
-              className="w-4 h-4 text-[#FF4D6D]"
+              className="w-4 h-4 text-[#7F011F]"
               fill="currentColor"
               viewBox="0 0 24 24"
             >
@@ -89,7 +89,7 @@ export default function LeadCard({
             </svg>
             LinkedIn Profile
           </span>
-          <span className="text-[#7F011F] group-hover:text-[#FF4D6D] transition-transform group-hover:translate-x-1">
+          <span className="text-[#7F011F] group-hover:text-[#9B1832] transition-transform group-hover:translate-x-1">
             →
           </span>
         </a>

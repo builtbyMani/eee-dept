@@ -14,7 +14,7 @@ interface FieldHorizontalRowsBgProps {
 
 export default function FieldHorizontalRowsBg({
   className = "",
-  opacity = 0.38,
+  opacity = 0.5,
 }: FieldHorizontalRowsBgProps) {
   return (
     <div
@@ -27,9 +27,9 @@ export default function FieldHorizontalRowsBg({
         style={{ opacity }}
       >
         <FieldHorizontalRows
-          background="#070707"
-          baseColor="#E2E2E2"
-          accentColor="#FF2A55"
+          background="#F5EBD0"
+          baseColor="#D6C49C"
+          accentColor="#7F011F"
           speed={24}
           scale={25}
           hover={120}
@@ -56,8 +56,8 @@ export default function FieldHorizontalRowsBg({
       </div>
 
       {/* Gentle top & bottom fade so rows gracefully dissolve under the pill navbar and footer */}
-      <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#090909] to-transparent pointer-events-none" />
-      <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#090909] to-transparent pointer-events-none" />
+      <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#F5EBD0] to-transparent pointer-events-none" />
+      <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#F5EBD0] to-transparent pointer-events-none" />
     </div>
   );
 }

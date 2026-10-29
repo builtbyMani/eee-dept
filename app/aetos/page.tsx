@@ -68,7 +68,7 @@ export default function AetosPage() {
         <div className="mb-10">
           <Link
             href="/#projects"
-            className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#D4C4C8] hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#7F011F] hover:text-[#9B1832] transition-colors font-medium"
           >
             <span>←</span> Back to Department Projects
           </Link>
@@ -76,21 +76,21 @@ export default function AetosPage() {
 
         {/* Hero Briefing */}
         <div className="max-w-4xl mb-16">
-          <p className="mono-label mb-3 text-[#FF4D6D]">
+          <p className="mono-label mb-3 text-[#7F011F] font-semibold">
             ISRO Robotics Challenge — URSC (IROC-U)
           </p>
-          <h1 className="text-4xl sm:text-6xl font-semibold text-white font-heading tracking-tight leading-tight mb-6">
+          <h1 className="text-4xl sm:text-6xl font-semibold text-[#181113] font-heading tracking-tight leading-tight mb-6">
             AËTOS (ΑΕΤΟΣ) <br />
             Autonomous Drone Team
           </h1>
-          <p className="text-lg sm:text-xl text-[#F0E6E9] leading-relaxed mb-4">
-            <span className="text-white font-medium">
+          <p className="text-lg sm:text-xl text-[#181113] leading-relaxed mb-4">
+            <span className="text-[#181113] font-semibold">
               Following the successful design and flight testing of their first custom UAV,
             </span>{" "}
             Team AËTOS is now engineering a next-generation GNSS-denied autonomous aerial vehicle
             specifically designed for ISRO&apos;s IROC-U competition.
           </p>
-          <p className="text-sm sm:text-base text-[#E8DCE0] leading-relaxed">
+          <p className="text-sm sm:text-base text-[#3E3033] leading-relaxed">
             Operating in GPS-denied environments requires zero reliance on satellite positioning.
             The vehicle localizes itself using visual-inertial odometry (VIO), high-rate optical flow,
             and 2D/3D LiDAR SLAM, executing real-time obstacle avoidance and precision landing
@@ -99,30 +99,30 @@ export default function AetosPage() {
         </div>
 
         {/* Technical Specs Strip */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 glass-card border-[#2D141A] mb-20">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 glass-card border-[#D9CAA8] bg-[#EFE3C3]/80 rounded-2xl mb-20 shadow-sm">
           <div>
-            <p className="font-mono text-[11px] text-[#D4C4C8] uppercase font-medium">Navigation Paradigm</p>
-            <p className="text-base font-semibold text-white mt-1">GNSS-Denied VIO</p>
+            <p className="font-mono text-[11px] text-[#6E5D61] uppercase font-semibold">Navigation Paradigm</p>
+            <p className="text-base font-semibold text-[#181113] mt-1">GNSS-Denied VIO</p>
           </div>
           <div>
-            <p className="font-mono text-[11px] text-[#D4C4C8] uppercase font-medium">Target Competition</p>
-            <p className="text-base font-semibold text-[#FF4D6D] mt-1">ISRO IROC-U</p>
+            <p className="font-mono text-[11px] text-[#6E5D61] uppercase font-semibold">Target Competition</p>
+            <p className="text-base font-semibold text-[#7F011F] mt-1">ISRO IROC-U</p>
           </div>
           <div>
-            <p className="font-mono text-[11px] text-[#D4C4C8] uppercase font-medium">Compute Payload</p>
-            <p className="text-base font-semibold text-white mt-1">NVIDIA Jetson / PX4</p>
+            <p className="font-mono text-[11px] text-[#6E5D61] uppercase font-semibold">Compute Payload</p>
+            <p className="text-base font-semibold text-[#181113] mt-1">NVIDIA Jetson / PX4</p>
           </div>
           <div>
-            <p className="font-mono text-[11px] text-[#D4C4C8] uppercase font-medium">Airframe Class</p>
-            <p className="text-base font-semibold text-[#FF4D6D] mt-1">Custom Carbon Quad</p>
+            <p className="font-mono text-[11px] text-[#6E5D61] uppercase font-semibold">Airframe Class</p>
+            <p className="text-base font-semibold text-[#7F011F] mt-1">Custom Carbon Quad</p>
           </div>
         </div>
 
         {/* Project Leadership Section */}
         <div className="mb-20">
           <div className="mb-8">
-            <p className="mono-label mb-2 text-[#FF4D6D]">Avionics &amp; Systems Leads</p>
-            <h2 className="text-2xl sm:text-4xl font-semibold text-white font-heading tracking-tight">
+            <p className="mono-label mb-2 text-[#7F011F] font-semibold">Avionics &amp; Systems Leads</p>
+            <h2 className="text-2xl sm:text-4xl font-semibold text-[#181113] font-heading tracking-tight">
               Project Leadership
             </h2>
           </div>
@@ -136,8 +136,8 @@ export default function AetosPage() {
         {/* Full Team Roster */}
         <div>
           <div className="mb-8">
-            <p className="mono-label mb-2 text-[#FF4D6D]">Engineering Subsystems</p>
-            <h2 className="text-2xl sm:text-4xl font-semibold text-white font-heading tracking-tight">
+            <p className="mono-label mb-2 text-[#7F011F] font-semibold">Engineering Subsystems</p>
+            <h2 className="text-2xl sm:text-4xl font-semibold text-[#181113] font-heading tracking-tight">
               Team Roster &amp; Subsystems
             </h2>
           </div>

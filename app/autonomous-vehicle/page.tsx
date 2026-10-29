@@ -57,7 +57,7 @@ export default function AutonomousVehiclePage() {
         <div className="mb-10">
           <Link
             href="/#projects"
-            className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#D4C4C8] hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#7F011F] hover:text-[#9B1832] transition-colors font-medium"
           >
             <span>←</span> Back to Department Projects
           </Link>
@@ -65,21 +65,21 @@ export default function AutonomousVehiclePage() {
 
         {/* Hero Briefing */}
         <div className="max-w-4xl mb-16">
-          <p className="mono-label mb-3 text-[#FF4D6D]">
+          <p className="mono-label mb-3 text-[#7F011F] font-semibold">
             Full-Stack Autonomous Mobility
           </p>
-          <h1 className="text-4xl sm:text-6xl font-semibold text-white font-heading tracking-tight leading-tight mb-6">
+          <h1 className="text-4xl sm:text-6xl font-semibold text-[#181113] font-heading tracking-tight leading-tight mb-6">
             Autonomous Vehicle <br />
             Development Platform
           </h1>
-          <p className="text-lg sm:text-xl text-[#F0E6E9] leading-relaxed mb-4">
-            <span className="text-white font-medium">
+          <p className="text-lg sm:text-xl text-[#181113] leading-relaxed mb-4">
+            <span className="text-[#181113] font-semibold">
               Converting utility chassis into an intelligent, drive-by-wire testbed.
             </span>{" "}
             The team designs and tests real-time perception, localization, and trajectory
             planning algorithms to achieve level-dependent autonomous navigation in structured campus environments.
           </p>
-          <p className="text-sm sm:text-base text-[#E8DCE0] leading-relaxed">
+          <p className="text-sm sm:text-base text-[#3E3033] leading-relaxed">
             By replacing mechanical steering and braking links with CAN-bus electronic actuators
             and integrating 360-degree LiDAR and stereo vision, the team creates an accessible,
             scalable platform for real-world autonomous robotics research.
@@ -87,30 +87,30 @@ export default function AutonomousVehiclePage() {
         </div>
 
         {/* Technical Specs Strip */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 glass-card border-[#2D141A] mb-20">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 glass-card border-[#D9CAA8] bg-[#EFE3C3]/80 rounded-2xl mb-20 shadow-sm">
           <div>
-            <p className="font-mono text-[11px] text-[#D4C4C8] uppercase font-medium">Framework</p>
-            <p className="text-base font-semibold text-white mt-1">ROS2 Humble / Iron</p>
+            <p className="font-mono text-[11px] text-[#6E5D61] uppercase font-semibold">Framework</p>
+            <p className="text-base font-semibold text-[#181113] mt-1">ROS2 Humble / Iron</p>
           </div>
           <div>
-            <p className="font-mono text-[11px] text-[#D4C4C8] uppercase font-medium">Actuation Stack</p>
-            <p className="text-base font-semibold text-[#FF4D6D] mt-1">CAN-Bus Drive-by-Wire</p>
+            <p className="font-mono text-[11px] text-[#6E5D61] uppercase font-semibold">Actuation Stack</p>
+            <p className="text-base font-semibold text-[#7F011F] mt-1">CAN-Bus Drive-by-Wire</p>
           </div>
           <div>
-            <p className="font-mono text-[11px] text-[#D4C4C8] uppercase font-medium">Perception Rig</p>
-            <p className="text-base font-semibold text-white mt-1">3D LiDAR + Stereo Cameras</p>
+            <p className="font-mono text-[11px] text-[#6E5D61] uppercase font-semibold">Perception Rig</p>
+            <p className="text-base font-semibold text-[#181113] mt-1">3D LiDAR + Stereo Cameras</p>
           </div>
           <div>
-            <p className="font-mono text-[11px] text-[#D4C4C8] uppercase font-medium">Safety Layer</p>
-            <p className="text-base font-semibold text-[#FF4D6D] mt-1">Hardwired E-Stop Relay</p>
+            <p className="font-mono text-[11px] text-[#6E5D61] uppercase font-semibold">Safety Layer</p>
+            <p className="text-base font-semibold text-[#7F011F] mt-1">Hardwired E-Stop Relay</p>
           </div>
         </div>
 
         {/* Project Leadership Section */}
         <div className="mb-20">
           <div className="mb-8">
-            <p className="mono-label mb-2 text-[#FF4D6D]">Autonomy &amp; Embedded Lead</p>
-            <h2 className="text-2xl sm:text-4xl font-semibold text-white font-heading tracking-tight">
+            <p className="mono-label mb-2 text-[#7F011F] font-semibold">Autonomy &amp; Embedded Lead</p>
+            <h2 className="text-2xl sm:text-4xl font-semibold text-[#181113] font-heading tracking-tight">
               Project Leadership
             </h2>
           </div>
@@ -124,8 +124,8 @@ export default function AutonomousVehiclePage() {
         {/* Full Team Roster */}
         <div>
           <div className="mb-8">
-            <p className="mono-label mb-2 text-[#FF4D6D]">Perception &amp; Controls Engineering</p>
-            <h2 className="text-2xl sm:text-4xl font-semibold text-white font-heading tracking-tight">
+            <p className="mono-label mb-2 text-[#7F011F] font-semibold">Perception &amp; Controls Engineering</p>
+            <h2 className="text-2xl sm:text-4xl font-semibold text-[#181113] font-heading tracking-tight">
               Team Roster &amp; Subsystems
             </h2>
           </div>

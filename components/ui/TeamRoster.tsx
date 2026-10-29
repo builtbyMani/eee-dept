@@ -31,25 +31,25 @@ export default function TeamRoster({ members }: TeamRosterProps) {
             variants={fadeInUp}
             whileHover={{ y: -2 }}
             transition={tactileSpring}
-            className="p-4 border border-[#2D141A] bg-[#0E0608]/90 hover:border-[#7F011F] transition-colors flex flex-col justify-between"
+            className="p-4 border border-[#D9CAA8] bg-[#EFE3C3]/60 hover:border-[#7F011F] transition-colors flex flex-col justify-between rounded-xl shadow-sm"
           >
             <div>
-              <div className="flex items-center justify-between font-mono text-[11px] text-[#D4C4C8] mb-2 font-medium">
-                <span>{paddedIndex}</span>
+              <div className="flex items-center justify-between font-mono text-[11px] text-[#6E5D61] mb-2 font-medium">
+                <span className="text-[#7F011F] font-semibold">{paddedIndex}</span>
                 {member.specialBadge ? (
-                  <span className="text-[#FF4D6D] border border-[#7F011F]/50 px-1 py-0.5 bg-[#7F011F]/15 font-medium">
+                  <span className="text-[#7F011F] border border-[#7F011F]/30 px-1.5 py-0.5 bg-[#7F011F]/10 font-semibold rounded">
                     {member.specialBadge}
                   </span>
                 ) : (
                   <span>ENGINEER</span>
                 )}
               </div>
-              <h4 className="text-base font-semibold text-white mb-1 tracking-tight font-heading">
+              <h4 className="text-base font-semibold text-[#181113] mb-1 tracking-tight font-heading">
                 {member.name}
               </h4>
             </div>
             {member.role && (
-              <p className="text-xs font-mono text-[#E8DCE0] mt-2">
+              <p className="text-xs font-mono text-[#3E3033] mt-2">
                 {member.role}
               </p>
             )}

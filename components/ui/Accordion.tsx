@@ -35,25 +35,25 @@ export default function Accordion() {
   };
 
   return (
-    <div className="border-t border-[#2D141A]">
+    <div className="border-t border-[#D9CAA8]">
       {STEPS.map((step, idx) => {
         const isOpen = openIndex === idx;
         return (
-          <div key={step.num} className="border-b border-[#2D141A]">
+          <div key={step.num} className="border-b border-[#D9CAA8]">
             <button
               onClick={() => toggle(idx)}
               aria-expanded={isOpen}
               className="w-full py-6 flex items-center justify-between text-left group cursor-pointer"
             >
               <div className="flex items-center gap-6 sm:gap-12">
-                <span className="font-mono text-sm sm:text-base text-[#D4C4C8] font-medium">
+                <span className="font-mono text-sm sm:text-base text-[#7F011F] font-semibold">
                   {step.num}
                 </span>
-                <span className="text-xl sm:text-2xl font-semibold text-white group-hover:text-[#FF4D6D] transition-colors font-heading">
+                <span className="text-xl sm:text-2xl font-semibold text-[#181113] group-hover:text-[#7F011F] transition-colors font-heading">
                   {step.title}
                 </span>
               </div>
-              <span className="font-mono text-2xl text-[#FF4D6D] group-hover:text-white transition-colors">
+              <span className="font-mono text-2xl text-[#7F011F] group-hover:text-[#9B1832] transition-colors">
                 {isOpen ? "–" : "+"}
               </span>
             </button>
@@ -66,7 +66,7 @@ export default function Accordion() {
                   transition={settleSpring}
                   className="overflow-hidden"
                 >
-                  <p className="pb-6 pl-12 sm:pl-20 max-w-3xl text-sm sm:text-base text-[#E8DCE0] leading-relaxed font-normal">
+                  <p className="pb-6 pl-12 sm:pl-20 max-w-3xl text-sm sm:text-base text-[#3E3033] leading-relaxed font-normal">
                     {step.body}
                   </p>
                 </motion.div>

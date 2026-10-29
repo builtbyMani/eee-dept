@@ -61,8 +61,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#7F011F",
-  colorScheme: "dark",
+  themeColor: "#F5EBD0",
+  colorScheme: "light",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
@@ -77,7 +77,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${raleway.variable} ${dmMono.variable} dark scroll-smooth`}
+      className={`${raleway.variable} ${dmMono.variable} scroll-smooth`}
     >
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -89,7 +89,7 @@ export default function RootLayout({
       </head>
       <body
         suppressHydrationWarning
-        className="min-h-[100dvh] flex flex-col bg-[#090909] text-[#F0E6E9] antialiased selection:bg-[#7F011F] selection:text-white max-w-[100vw] overflow-x-hidden font-sans"
+        className="min-h-[100dvh] flex flex-col bg-[#F5EBD0] text-[#181113] antialiased selection:bg-[#7F011F] selection:text-white max-w-[100vw] overflow-x-hidden font-sans"
       >
         <Navbar />
         <main className="flex-1 w-full max-w-[100vw] overflow-x-hidden">{children}</main>

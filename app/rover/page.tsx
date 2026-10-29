@@ -48,7 +48,7 @@ export default function RoverPage() {
         <div className="mb-10">
           <Link
             href="/#projects"
-            className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#D4C4C8] hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#7F011F] hover:text-[#9B1832] transition-colors font-medium"
           >
             <span>←</span> Back to Department Projects
           </Link>
@@ -56,15 +56,15 @@ export default function RoverPage() {
 
         {/* Hero Briefing */}
         <div className="max-w-4xl mb-16">
-          <p className="mono-label mb-3 text-[#FF4D6D]">
+          <p className="mono-label mb-3 text-[#7F011F] font-semibold">
             International Rover Challenge (IRC)
           </p>
-          <h1 className="text-4xl sm:text-6xl font-semibold text-white font-heading tracking-tight leading-tight mb-6">
+          <h1 className="text-4xl sm:text-6xl font-semibold text-[#181113] font-heading tracking-tight leading-tight mb-6">
             Planetary Rover <br />
             Engineering Team
           </h1>
-          <p className="text-lg sm:text-xl text-[#F0E6E9] leading-relaxed mb-4">
-            <span className="text-white font-medium">
+          <p className="text-lg sm:text-xl text-[#181113] leading-relaxed mb-4">
+            <span className="text-[#181113] font-semibold">
               Engineering an all-terrain planetary exploration rover from the ground up.
             </span>{" "}
             The team designs and builds a 6-wheeled robotic vehicle to tackle the demanding operational tasks of the{" "}
@@ -72,13 +72,13 @@ export default function RoverPage() {
               href="https://roverchallenge.org/irc/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#FF4D6D] underline underline-offset-4 hover:text-white transition-colors"
+              className="text-[#7F011F] underline underline-offset-4 hover:text-[#9B1832] transition-colors font-semibold"
             >
               International Rover Challenge (IRC) ↗
             </a>
             .
           </p>
-          <p className="text-sm sm:text-base text-[#E8DCE0] leading-relaxed">
+          <p className="text-sm sm:text-base text-[#3E3033] leading-relaxed">
             From negotiating boulder fields and loose regolith slopes with a passive rocker-bogie suspension,
             to performing delicate instrumentation switches and soil core extraction with a custom 5-DoF robotic arm,
             every mechanical and electrical assembly is engineered for extreme environment reliability.
@@ -86,30 +86,30 @@ export default function RoverPage() {
         </div>
 
         {/* Technical Specs Strip */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 glass-card border-[#2D141A] mb-20">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 glass-card border-[#D9CAA8] bg-[#EFE3C3]/80 rounded-2xl mb-20 shadow-sm">
           <div>
-            <p className="font-mono text-[11px] text-[#D4C4C8] uppercase font-medium">Target Competition</p>
-            <p className="text-base font-semibold text-white mt-1">IRC Challenge</p>
+            <p className="font-mono text-[11px] text-[#6E5D61] uppercase font-semibold">Target Competition</p>
+            <p className="text-base font-semibold text-[#181113] mt-1">IRC Challenge</p>
           </div>
           <div>
-            <p className="font-mono text-[11px] text-[#D4C4C8] uppercase font-medium">Suspension Linkage</p>
-            <p className="text-base font-semibold text-[#FF4D6D] mt-1">6-Wheel Rocker-Bogie</p>
+            <p className="font-mono text-[11px] text-[#6E5D61] uppercase font-semibold">Suspension Linkage</p>
+            <p className="text-base font-semibold text-[#7F011F] mt-1">6-Wheel Rocker-Bogie</p>
           </div>
           <div>
-            <p className="font-mono text-[11px] text-[#D4C4C8] uppercase font-medium">Manipulator Freedom</p>
-            <p className="text-base font-semibold text-white mt-1">5-DoF Robotic Arm</p>
+            <p className="font-mono text-[11px] text-[#6E5D61] uppercase font-semibold">Manipulator Freedom</p>
+            <p className="text-base font-semibold text-[#181113] mt-1">5-DoF Robotic Arm</p>
           </div>
           <div>
-            <p className="font-mono text-[11px] text-[#D4C4C8] uppercase font-medium">Power Architecture</p>
-            <p className="text-base font-semibold text-[#FF4D6D] mt-1">High-Rate LiFePO4</p>
+            <p className="font-mono text-[11px] text-[#6E5D61] uppercase font-semibold">Power Architecture</p>
+            <p className="text-base font-semibold text-[#7F011F] mt-1">High-Rate LiFePO4</p>
           </div>
         </div>
 
         {/* Project Leadership Section */}
         <div className="mb-20">
           <div className="mb-8">
-            <p className="mono-label mb-2 text-[#FF4D6D]">Systems &amp; Kinematics Lead</p>
-            <h2 className="text-2xl sm:text-4xl font-semibold text-white font-heading tracking-tight">
+            <p className="mono-label mb-2 text-[#7F011F] font-semibold">Systems &amp; Kinematics Lead</p>
+            <h2 className="text-2xl sm:text-4xl font-semibold text-[#181113] font-heading tracking-tight">
               Project Leadership
             </h2>
           </div>
@@ -123,8 +123,8 @@ export default function RoverPage() {
         {/* Full Team Roster */}
         <div>
           <div className="mb-8">
-            <p className="mono-label mb-2 text-[#FF4D6D]">Mechanical &amp; Electronics Subsystems</p>
-            <h2 className="text-2xl sm:text-4xl font-semibold text-white font-heading tracking-tight">
+            <p className="mono-label mb-2 text-[#7F011F] font-semibold">Mechanical &amp; Electronics Subsystems</p>
+            <h2 className="text-2xl sm:text-4xl font-semibold text-[#181113] font-heading tracking-tight">
               Team Subsystems
             </h2>
           </div>

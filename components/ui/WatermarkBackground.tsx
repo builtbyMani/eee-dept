@@ -22,21 +22,21 @@ export default function WatermarkBackground({
     >
       {/* Background Subtle Grid Texture */}
       <div
-        className="absolute inset-0 opacity-[0.22]"
+        className="absolute inset-0 opacity-[0.35]"
         style={{
           backgroundImage:
-            "linear-gradient(to right, #2D141A 1px, transparent 1px), linear-gradient(to bottom, #2D141A 1px, transparent 1px)",
+            "linear-gradient(to right, #D9CAA8 1px, transparent 1px), linear-gradient(to bottom, #D9CAA8 1px, transparent 1px)",
           backgroundSize: "40px 40px",
         }}
       />
 
-      {/* Radial Gradient Vignette so the logo fades into the dark borders */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,#090909_85%)] z-10" />
+      {/* Radial Gradient Vignette so the logo fades into the sand borders */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_25%,#F5EBD0_85%)] z-10" />
 
       {/* Floating Animated Watermark Emblem */}
       <motion.div
         initial={{ opacity: 0, scale: 0.94 }}
-        animate={{ opacity, scale: 1 }}
+        animate={{ opacity: opacity * 0.7, scale: 1 }}
         transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         className="relative w-[min(90vw,850px)] aspect-[16/10] z-0 flex items-center justify-center"
       >
@@ -46,7 +46,7 @@ export default function WatermarkBackground({
           fill
           priority
           sizes="(max-width: 1200px) 90vw, 850px"
-          className="object-contain filter grayscale contrast-125 brightness-110 drop-shadow-[0_0_80px_rgba(127,1,31,0.25)]"
+          className="object-contain filter grayscale contrast-110 opacity-60 drop-shadow-[0_0_60px_rgba(127,1,31,0.1)]"
         />
       </motion.div>
     </div>
