@@ -1,14 +1,25 @@
 import type { Metadata, Viewport } from "next";
-import { Raleway, DM_Mono } from "next/font/google";
+import localFont from "next/font/local";
+import { DM_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
 import ContactModal from "@/components/ui/ContactModal";
 
-const raleway = Raleway({
+const raleway = localFont({
+  src: [
+    {
+      path: "../public/fonts/Raleway-VariableFont_wght.ttf",
+      style: "normal",
+      weight: "100 900",
+    },
+    {
+      path: "../public/fonts/Raleway-Italic-VariableFont_wght.ttf",
+      style: "italic",
+      weight: "100 900",
+    },
+  ],
   variable: "--font-heading",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -79,14 +90,6 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${raleway.variable} ${dmMono.variable} scroll-smooth`}
     >
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-          rel="stylesheet"
-        />
-      </head>
       <body
         suppressHydrationWarning
         className="min-h-[100dvh] flex flex-col bg-[#F5EBD0] text-[#181113] antialiased selection:bg-[#7F011F] selection:text-white max-w-[100vw] overflow-x-hidden font-sans"

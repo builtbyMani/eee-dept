@@ -89,7 +89,7 @@ export default function HomePage() {
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ ...settleSpring, delay: 0.1 }}
-                  className="text-4xl sm:text-6xl lg:text-7xl font-normal text-[#181113] font-heading font-magari tracking-tight sm:tracking-tighter leading-[1.04]"
+                  className="text-4xl sm:text-6xl lg:text-7xl font-normal text-[#181113] font-heading tracking-tight sm:tracking-tighter leading-[1.04]"
                 >
                   We learn by building <br className="hidden sm:inline" />
                   machines that work.
@@ -156,7 +156,7 @@ export default function HomePage() {
               </motion.div>
             </div>
 
-            {/* Right Column: High-Voltage Laboratory Discharge Display */}
+            {/* Right Column: Electric Machine & Powertrain Architecture Display */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -169,15 +169,15 @@ export default function HomePage() {
                 aria-hidden="true"
               />
 
-              {/* Specimen Exhibition Case with High-Voltage Plasma Arc */}
-              <div className="relative w-full max-w-[460px] lg:max-w-[500px] aspect-[868/1024] bg-[#140B0E] rounded-3xl border border-[#D9CAA8] shadow-[0_20px_50px_rgba(70,25,35,0.14)] p-4 flex items-center justify-center overflow-hidden group z-10">
+              {/* Exploded Electric Machine Exhibition Case */}
+              <div className="relative w-full max-w-[420px] lg:max-w-[460px] aspect-[576/1024] flex items-center justify-center overflow-visible group z-10">
                 <Image
-                  src="/images/high-voltage-arc.png"
-                  alt="High-Voltage Laboratory Arc Discharge"
+                  src="/images/electric-motor-exploded.png"
+                  alt="Exploded Electric Motor & Powertrain Assembly"
                   fill
                   priority
-                  sizes="(max-width: 1024px) 440px, 500px"
-                  className="object-contain filter contrast-110 brightness-105 group-hover:scale-105 transition-transform duration-700 pointer-events-none p-2"
+                  sizes="(max-width: 1024px) 420px, 460px"
+                  className="object-contain filter drop-shadow-[0_20px_35px_rgba(70,25,35,0.18)] group-hover:scale-105 transition-transform duration-700 pointer-events-none"
                 />
               </div>
             </motion.div>

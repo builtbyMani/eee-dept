@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 
 const FieldHorizontalRows = dynamic(
-  () => import("@/components/originkit/ui/field-horizontal-rows-custom-style"),
+  () => import("@/components/originkit/ui/field-horizontal-rows-custom-style-3"),
   { ssr: false }
 );
 
@@ -14,7 +14,7 @@ interface FieldHorizontalRowsBgProps {
 
 export default function FieldHorizontalRowsBg({
   className = "",
-  opacity = 0.5,
+  opacity = 0.85,
 }: FieldHorizontalRowsBgProps) {
   return (
     <div
@@ -27,22 +27,45 @@ export default function FieldHorizontalRowsBg({
         style={{ opacity }}
       >
         <FieldHorizontalRows
-          background="#F5EBD0"
-          baseColor="#D6C49C"
-          accentColor="#7F011F"
-          speed={24}
-          scale={25}
-          hover={120}
-          activity={75}
+          background="transparent"
+          baseColor="transparent"
+          accentColor="#9B1832"
+          speed={32}
+          scale={50}
+          hover={167}
+          activity={100}
           slant={45}
+          ripple={22}
           advanced={{
-            rowCount: 12,
+            seed: 10,
+            grain: 0,
+            easeMs: 70,
+            gapMax: 110,
+            gapMin: 45,
+            crawlMax: 400,
+            crawlMin: 240,
+            lowDepth: 100,
+            rampFade: 110,
+            rowCount: 8,
+            vignette: 100,
+            hoverGlow: 200,
+            maxCrawls: 6,
+            rightward: 85,
+            rowOffset: 0,
             tickPitch: 2,
-            tickWidth: 33,
-            tickLength: 22,
-            maxCrawls: 8,
-            crawlSpeed: 480,
-            pointerRadius: 90,
+            tickWidth: 34,
+            crawlSpeed: 640,
+            plateauMax: 480,
+            plateauMin: 80,
+            rippleTail: 400,
+            rippleTint: 100,
+            rippleWave: 200,
+            tickLength: 30,
+            crawlsPerMin: 120,
+            pointerPress: 45,
+            rippleFadeMs: 100,
+            shoulderLeft: 45,
+            shoulderRight: 60,
           }}
           style={{
             position: "absolute",

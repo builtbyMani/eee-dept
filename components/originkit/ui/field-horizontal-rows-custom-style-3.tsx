@@ -18,8 +18,10 @@ function parseColor(input: string | undefined, fallback: RGBA): RGBA {
 
 function parseColorRaw(raw: string): RGBA | null {
     let s = raw.trim()
+    if (s === "transparent") return [0, 0, 0, 0]
     const v = /^var\(\s*--[^,]+,\s*(.+)\)$/.exec(s)
     if (v) s = v[1].trim()
+    if (s === "transparent") return [0, 0, 0, 0]
     if (s[0] === "#") {
         const h = s.slice(1)
         const x = (a: string) => parseInt(a, 16)
@@ -713,9 +715,9 @@ uniform vec2 uRes;
 uniform float uTime;
 uniform vec2 uMouse;
 uniform float uHover;
-uniform vec3 uBg;
-uniform vec3 uBase;
-uniform vec3 uAccent;
+uniform vec4 uBg;
+uniform vec4 uBase;
+uniform vec4 uAccent;
 uniform float uScale;
 uniform sampler2D uProfile;
 uniform vec4 uGeom;
@@ -724,6 +726,7 @@ uniform float uCols;
 uniform vec2 uRange;
 uniform float uGlow;
 uniform vec2 uFx;
+uniform float uOnlyActive;
 out vec4 outColor;
 float h21(vec2 p) { p = fract(p * vec2(123.34, 456.21)); p += dot(p, p + 45.32); return fract(p.x * p.y); }
 void main() {
@@ -743,9 +746,13 @@ void main() {
     float glow = uHover * uGlow * exp(-dot(dm, dm) / max(4.5 * gap * gap, 1e-4));
 
     vec3 acc = vec3(0.0);
+    float covSum = 0.0;
     float rem = 1.0;
     int kHi = min(int(floor((p.y - off + uRange.x * gap) / gap)), rows - 1);
     int kLo = max(int(floor((p.y - off - (uRange.y + uRange.x) * gap - L) / gap)), 0);
+
+    bool hideStatic = (uOnlyActive > 0.5) || (uBase.a < 0.05) || (distance(uBase.rgb, uBg.rgb) < 0.02 && uBg.a > 0.5);
+
     for (int k = kHi; k >= kLo; k--) {
         float base = off + float(k) * gap;
         int j0 = int(floor((p.x - L * tn - w) / pitch)) + M;
@@ -756,34 +763,51 @@ void main() {
             if (j < 0 || j >= cols) continue;
             vec4 t = texelFetch(uProfile, ivec2(j, k), 0);
             if (t.y < 0.004) continue;
+            if (hideStatic && t.z < 0.005) continue;
             float xj = float(j - M) * pitch;
             float v = p.y - (base + t.x * gap);
             float ends = clamp(v + 0.5, 0.0, 1.0) * clamp(L - v + 0.5, 0.0, 1.0);
             float d = abs(p.x - xj - v * tn) * cs;
             float c = clamp(w * 0.5 + 0.5 - d, 0.0, 1.0) * ends;
-            if (c > cov) { cov = c; tc = mix(uBase, uAccent, clamp(t.z, 0.0, 1.0)) * t.y; }
+            if (hideStatic) {
+                c *= smoothstep(0.005, 0.04, t.z);
+            }
+            if (c > cov) {
+                cov = c;
+                tc = hideStatic ? uAccent.rgb : mix(uBase.rgb, uAccent.rgb, clamp(t.z, 0.0, 1.0)) * t.y;
+            }
         }
         if (cov > 0.0) {
             tc = min(tc * (1.0 + glow), vec3(1.0));
             acc += rem * cov * tc;
+            covSum += rem * cov;
             rem *= 1.0 - cov;
         }
 
-        float fx = (p.x - 0.5 * L * tn) / pitch + float(M);
-        int jb = int(floor(fx));
-        float a0 = texelFetch(uProfile, ivec2(clamp(jb, 0, cols - 1), k), 0).x;
-        float a1 = texelFetch(uProfile, ivec2(clamp(jb + 1, 0, cols - 1), k), 0).x;
-        float ybody = base + mix(a0, a1, fract(fx)) * gap;
-        if (p.y > ybody || rem <= 0.001) { rem = 0.0; break; }
+        if (!hideStatic) {
+            float fx = (p.x - 0.5 * L * tn) / pitch + float(M);
+            int jb = int(floor(fx));
+            float a0 = texelFetch(uProfile, ivec2(clamp(jb, 0, cols - 1), k), 0).x;
+            float a1 = texelFetch(uProfile, ivec2(clamp(jb + 1, 0, cols - 1), k), 0).x;
+            float ybody = base + mix(a0, a1, fract(fx)) * gap;
+            if (p.y > ybody || rem <= 0.001) { rem = 0.0; break; }
+        }
     }
-    vec3 col = uBg * rem + acc;
 
-    vec2 uv = gl_FragCoord.xy / max(uRes, vec2(1.0));
-    vec2 vq = uv - 0.5;
-    vq.x *= uRes.x / max(uRes.y, 1.0);
-    col *= 1.0 - uFx.y * smoothstep(0.25, 0.95, length(vq));
-    col += (h21(gl_FragCoord.xy + fract(uTime * 7.13) * 517.0) - 0.5) * uFx.x * 0.25;
-    outColor = vec4(clamp(col, 0.0, 1.0), 1.0);
+    if (uBg.a < 0.01) {
+        float finalAlpha = clamp(covSum, 0.0, 1.0) * uAccent.a;
+        outColor = vec4(acc, finalAlpha);
+    } else {
+        vec3 col = uBg.rgb * rem + acc;
+        if (uFx.y > 0.01 || uFx.x > 0.01) {
+            vec2 uv = gl_FragCoord.xy / max(uRes, vec2(1.0));
+            vec2 vq = uv - 0.5;
+            vq.x *= uRes.x / max(uRes.y, 1.0);
+            col *= 1.0 - uFx.y * smoothstep(0.25, 0.95, length(vq));
+            col += (h21(gl_FragCoord.xy + fract(uTime * 7.13) * 517.0) - 0.5) * uFx.x * 0.25;
+        }
+        outColor = vec4(clamp(col, 0.0, 1.0), uBg.a);
+    }
 }`
 
 interface Props extends EffectProps {
@@ -793,6 +817,7 @@ interface Props extends EffectProps {
     speed?: number
     scale?: number
     hover?: number
+    onlyActiveTicks?: boolean
     style?: CSSProperties
 }
 
@@ -805,8 +830,8 @@ in vec2 aPos;
 void main() { gl_Position = vec4(aPos, 0.0, 1.0); }`
 
 function __OriginkitBase_FieldHorizontalRows(props: Props) {
-    const { background = "#000000", baseColor = "#FFFFFF", accentColor = "#71FF00", speed = 32, scale = 50, hover = 167, style } = props
-    void [baseColor, accentColor, speed, scale, hover]
+    const { background = "#000000", baseColor = "#FFFFFF", accentColor = "#71FF00", speed = 32, scale = 50, hover = 167, onlyActiveTicks = true, style } = props
+    void [baseColor, accentColor, speed, scale, hover, onlyActiveTicks]
     const rootRef = useRef<HTMLDivElement>(null)
     const canvasRef = useRef<HTMLCanvasElement>(null)
     const propsRef = useRef(props)
@@ -816,7 +841,7 @@ function __OriginkitBase_FieldHorizontalRows(props: Props) {
         const root = rootRef.current
         const canvas = canvasRef.current
         if (!root || !canvas) return
-        const gl = canvas.getContext("webgl2", { alpha: false, antialias: false, depth: false })
+        const gl = canvas.getContext("webgl2", { alpha: true, antialias: true, depth: false })
         if (!gl) return
         const reduced = typeof window.matchMedia === "function" && window.matchMedia("(prefers-reduced-motion: reduce)").matches
 
@@ -893,18 +918,19 @@ function __OriginkitBase_FieldHorizontalRows(props: Props) {
             mx += (tx - mx) * k
             my += (ty - my) * k
             hov += (over - hov) * k
-            const bg = parseColor(p.background, [0.03, 0.03, 0.04, 1])
-            const base = parseColor(p.baseColor, [0.23, 0.18, 0.55, 1])
-            const acc = parseColor(p.accentColor, [0.91, 0.42, 0.57, 1])
+            const bg = parseColor(p.background, [0, 0, 0, 0])
+            const base = parseColor(p.baseColor, [0, 0, 0, 0])
+            const acc = parseColor(p.accentColor, [0.84, 0.08, 0.16, 1])
             gl.viewport(0, 0, canvas.width, canvas.height)
             gl.uniform2f(u("uRes"), canvas.width, canvas.height)
             gl.uniform1f(u("uTime"), clock)
             gl.uniform2f(u("uMouse"), mx, my)
             gl.uniform1f(u("uHover"), hov * (Math.max(0, Math.min(200, num(p.hover, 100))) / 100))
-            gl.uniform3f(u("uBg"), bg[0], bg[1], bg[2])
-            gl.uniform3f(u("uBase"), base[0], base[1], base[2])
-            gl.uniform3f(u("uAccent"), acc[0], acc[1], acc[2])
+            gl.uniform4f(u("uBg"), bg[0], bg[1], bg[2], bg[3])
+            gl.uniform4f(u("uBase"), base[0], base[1], base[2], base[3])
+            gl.uniform4f(u("uAccent"), acc[0], acc[1], acc[2], acc[3])
             gl.uniform1f(u("uScale"), Math.max(10, Math.min(300, num(p.scale, 100))) / 100)
+            gl.uniform1f(u("uOnlyActive"), (p.onlyActiveTicks ?? true) ? 1.0 : 0.0)
             effectUniforms(gl, u, p)
             gl.drawArrays(gl.TRIANGLES, 0, 3)
         }
@@ -918,18 +944,18 @@ function __OriginkitBase_FieldHorizontalRows(props: Props) {
     }, [])
 
     return (
-        <div ref={rootRef} style={{ position: "relative", minWidth: 1200, minHeight: 800, overflow: "hidden", background, ...style }}>
+        <div ref={rootRef} style={{ position: "relative", width: "100%", height: "100%", minWidth: 0, minHeight: 0, overflow: "hidden", ...style }}>
             <canvas ref={canvasRef} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", display: "block" }} />
         </div>
     )
 }
 
 const __originkitPresetProps = {
-  "background": "#000000",
-  "baseColor": "#FFFFFF",
-  "accentColor": "#71FF00",
+  "background": "#EBECE0",
+  "baseColor": "#000000",
+  "accentColor": "#6A0606",
   "speed": 32,
-  "scale": 26,
+  "scale": 50,
   "hover": 167,
   "activity": 100,
   "slant": 45,
