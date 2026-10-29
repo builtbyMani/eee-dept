@@ -14,7 +14,7 @@ interface FieldHorizontalRowsBgProps {
 
 export default function FieldHorizontalRowsBg({
   className = "",
-  opacity = 0.85,
+  opacity = 0.6,
 }: FieldHorizontalRowsBgProps) {
   return (
     <div
@@ -31,7 +31,7 @@ export default function FieldHorizontalRowsBg({
           baseColor="transparent"
           accentColor="#9B1832"
           speed={32}
-          scale={50}
+          scale={42.5}
           hover={167}
           activity={100}
           slant={45}
@@ -53,14 +53,14 @@ export default function FieldHorizontalRowsBg({
             rightward: 85,
             rowOffset: 0,
             tickPitch: 2,
-            tickWidth: 34,
+            tickWidth: 29,
             crawlSpeed: 640,
             plateauMax: 480,
             plateauMin: 80,
             rippleTail: 400,
             rippleTint: 100,
             rippleWave: 200,
-            tickLength: 30,
+            tickLength: 25,
             crawlsPerMin: 120,
             pointerPress: 45,
             rippleFadeMs: 100,

@@ -1,6 +1,14 @@
 @import "tailwindcss";
 
 @font-face {
+  font-family: 'Rozha One';
+  src: url('/fonts/RozhaOne-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'Raleway';
   src: url('/fonts/Raleway-VariableFont_wght.ttf') format('truetype');
   font-weight: 100 900;
@@ -56,6 +64,7 @@
   --color-muted: #6E5D61;
   --color-border: #D9CAA8;
   --color-brand: #7F011F;
+  --font-hero: var(--font-rozha), 'Rozha One', serif;
   --font-heading: var(--font-heading), 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-sans: var(--font-heading), 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: var(--font-mono), 'DM Mono', ui-monospace, Menlo, Consolas, monospace;
@@ -135,6 +144,11 @@ body {
 .font-magari {
   font-family: var(--font-heading), 'Raleway', sans-serif;
   font-variation-settings: 'wght' 400;
+}
+
+.font-hero,
+h1.font-hero {
+  font-family: var(--font-hero), 'Rozha One', serif;
 }
 
 h1, h2, h3, h4, h5, h6, .font-heading {

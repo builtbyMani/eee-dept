@@ -30,6 +30,12 @@ const dmMono = DM_Mono({
   display: "swap",
 });
 
+const rozhaOne = localFont({
+  src: "../public/fonts/RozhaOne-Regular.ttf",
+  variable: "--font-rozha",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: {
     default: "Department of Electrical & Electronics Engineering — JNTUH UCESTH",
@@ -88,7 +94,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${raleway.variable} ${dmMono.variable} scroll-smooth`}
+      className={`${raleway.variable} ${dmMono.variable} ${rozhaOne.variable} scroll-smooth`}
     >
       <body
         suppressHydrationWarning
