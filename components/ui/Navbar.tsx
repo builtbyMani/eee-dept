@@ -24,14 +24,14 @@ export default function Navbar() {
   return (
     <>
       <header className="fixed top-3 sm:top-4 left-1/2 -translate-x-1/2 z-50 w-[min(94vw,1100px)] transition-all">
-        <div className="w-full h-14 sm:h-16 px-4 sm:px-6 rounded-full bg-[#F5EBD0]/90 backdrop-blur-xl border border-[#D9CAA8] shadow-[0_8px_30px_rgba(70,30,40,0.06),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-between gap-4">
+        <div className="w-full h-14 sm:h-16 px-4 sm:px-6 rounded-full bg-[#EEEBDA]/90 backdrop-blur-xl border border-[#CECAB3] shadow-[0_8px_30px_rgba(38,40,62,0.06),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-between gap-4">
           {/* Brand / Logo with Official JNTUH Emblem */}
           <Link
             href="/"
             onClick={handleLogoClick}
-            className="flex items-center gap-3 text-[#181113] no-underline font-mono text-xs tracking-widest uppercase hover:opacity-90 transition-opacity cursor-pointer group shrink-0"
+            className="flex items-center gap-3 text-[#121317] no-underline font-mono text-xs tracking-widest uppercase hover:opacity-90 transition-opacity cursor-pointer group shrink-0"
           >
-            <div className="relative w-8 h-8 flex-shrink-0 rounded-full bg-[#7F011F]/10 p-0.5 border border-[#7F011F]/30 group-hover:border-[#7F011F] transition-colors shadow-[0_0_12px_rgba(127,1,31,0.15)]">
+            <div className="relative w-8 h-8 flex-shrink-0 rounded-full bg-[#282B4A]/10 p-0.5 border border-[#282B4A]/30 group-hover:border-[#282B4A] transition-colors shadow-[0_0_12px_rgba(40,43,74,0.15)]">
               <Image
                 src="/images/jntuh-logo.png"
                 alt="JNTU Hyderabad Official Emblem"
@@ -42,38 +42,38 @@ export default function Navbar() {
               />
             </div>
             <div className="flex flex-col">
-              <span className="font-semibold tracking-wider text-[#181113] group-hover:text-[#7F011F] transition-colors">
+              <span className="font-semibold tracking-wider text-[#121317] group-hover:text-[#282B4A] transition-colors">
                 EEE · JNTUH
               </span>
-              <span className="text-[9px] text-[#6E5D61] tracking-normal -mt-0.5 hidden sm:inline">
+              <span className="text-[9px] text-[#60616B] tracking-normal -mt-0.5 hidden sm:inline">
                 ESTD. 1965
               </span>
             </div>
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-1 lg:gap-2 font-mono text-xs uppercase tracking-wider text-[#3E3033]">
+          <nav className="hidden md:flex items-center gap-1 lg:gap-2 font-mono text-xs uppercase tracking-wider text-[#33343B]">
             <Link
               href={isHome ? "#projects" : "/#projects"}
-              className="px-3 py-1.5 rounded-full hover:bg-[#EAE0C5] hover:text-[#7F011F] transition-colors"
+              className="px-3 py-1.5 rounded-full hover:bg-[#E2DFCD] hover:text-[#282B4A] transition-colors"
             >
               Machines
             </Link>
             <Link
               href={isHome ? "#leadership" : "/#leadership"}
-              className="px-3 py-1.5 rounded-full hover:bg-[#EAE0C5] hover:text-[#7F011F] transition-colors"
+              className="px-3 py-1.5 rounded-full hover:bg-[#E2DFCD] hover:text-[#282B4A] transition-colors"
             >
               Leadership
             </Link>
             <Link
               href={isHome ? "#achievements" : "/#achievements"}
-              className="px-3 py-1.5 rounded-full hover:bg-[#EAE0C5] hover:text-[#7F011F] transition-colors"
+              className="px-3 py-1.5 rounded-full hover:bg-[#E2DFCD] hover:text-[#282B4A] transition-colors"
             >
               Achievements
             </Link>
             <Link
               href={isHome ? "#approach" : "/#approach"}
-              className="hidden lg:inline px-3 py-1.5 rounded-full hover:bg-[#EAE0C5] hover:text-[#7F011F] transition-colors"
+              className="hidden lg:inline px-3 py-1.5 rounded-full hover:bg-[#E2DFCD] hover:text-[#282B4A] transition-colors"
             >
               Methodology
             </Link>
@@ -81,7 +81,7 @@ export default function Navbar() {
               href="https://hexawatts-y8t9-flax.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 py-1.5 rounded-full inline-flex items-center gap-1 text-[#7F011F] hover:bg-[#EAE0C5] transition-colors font-semibold"
+              className="px-3 py-1.5 rounded-full inline-flex items-center gap-1 text-[#282B4A] hover:bg-[#E2DFCD] transition-colors font-semibold"
             >
               Hexawatts <span className="text-[10px]">↗</span>
             </a>
@@ -95,7 +95,7 @@ export default function Navbar() {
               whileHover={{ y: -1, scale: 1.02 }}
               whileTap={{ scale: 0.96 }}
               transition={tactileSpring}
-              className="px-4 sm:px-5 py-2 rounded-full bg-[#7F011F] hover:bg-[#9B1832] text-white font-mono text-xs uppercase tracking-wider transition-all shadow-[0_4px_16px_rgba(127,1,31,0.25)] cursor-pointer"
+              className="px-4 sm:px-5 py-2 rounded-full bg-[#282B4A] hover:bg-[#3F4474] text-white font-mono text-xs uppercase tracking-wider transition-all shadow-[0_4px_16px_rgba(40,43,74,0.25)] cursor-pointer"
             >
               Contact ↗
             </motion.button>
@@ -105,7 +105,7 @@ export default function Navbar() {
               type="button"
               onClick={() => setMobileMenuOpen(true)}
               aria-label="Open Navigation Menu"
-              className="md:hidden w-9 h-9 rounded-full bg-[#EAE0C5] border border-[#D9CAA8] flex items-center justify-center text-[#181113] hover:bg-[#E0D4B5] transition-colors cursor-pointer"
+              className="md:hidden w-9 h-9 rounded-full bg-[#E2DFCD] border border-[#CECAB3] flex items-center justify-center text-[#121317] hover:bg-[#D7D3BE] transition-colors cursor-pointer"
             >
               <svg
                 width="16"

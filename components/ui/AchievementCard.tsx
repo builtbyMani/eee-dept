@@ -31,15 +31,15 @@ export default function AchievementCard({
       transition={tactileSpring}
       className={`p-6 border transition-all flex flex-col justify-between rounded-xl ${
         featured
-          ? "border-[#7F011F] bg-[#EFE3C3]/90 shadow-[0_4px_24px_rgba(127,1,31,0.08)]"
-          : "border-[#D9CAA8] bg-[#EFE3C3]/70 hover:border-[#7F011F] shadow-[0_2px_12px_rgba(70,30,40,0.03)]"
+          ? "border-[#282B4A] bg-[#E6E2CC]/90 shadow-[0_4px_24px_rgba(40,43,74,0.08)]"
+          : "border-[#CECAB3] bg-[#E6E2CC]/70 hover:border-[#282B4A] shadow-[0_2px_12px_rgba(38,40,62,0.03)]"
       }`}
     >
       <div>
         {/* Top Header: Category & Date */}
         <div className="flex items-center justify-between text-xs font-mono uppercase tracking-wider mb-3">
-          <span className="text-[#7F011F] font-semibold">{category}</span>
-          <span className="text-[#6E5D61]">{date}</span>
+          <span className="text-[#282B4A] font-semibold">{category}</span>
+          <span className="text-[#60616B]">{date}</span>
         </div>
 
         {/* Big Result Badge */}
@@ -47,8 +47,8 @@ export default function AchievementCard({
           <span
             className={`inline-block font-mono text-xs uppercase tracking-wider px-2.5 py-1 border rounded ${
               featured
-                ? "bg-[#7F011F]/15 border-[#7F011F]/40 text-[#7F011F] font-medium"
-                : "bg-[#EAE0C5] border-[#D9CAA8] text-[#181113]"
+                ? "bg-[#282B4A]/15 border-[#282B4A]/40 text-[#282B4A] font-medium"
+                : "bg-[#E2DFCD] border-[#CECAB3] text-[#121317]"
             }`}
           >
             {resultBadge}
@@ -56,25 +56,25 @@ export default function AchievementCard({
         </div>
 
         {/* Title & Students */}
-        <h4 className="text-lg sm:text-xl font-semibold text-[#181113] mb-2 tracking-tight font-heading">
+        <h4 className="text-lg sm:text-xl font-semibold text-[#121317] mb-2 tracking-tight font-heading">
           {title}
         </h4>
-        <p className="text-xs font-mono text-[#7F011F] mb-3">{names}</p>
+        <p className="text-xs font-mono text-[#282B4A] mb-3">{names}</p>
 
         {/* Summary Description */}
-        <p className="text-xs sm:text-sm text-[#3E3033] leading-relaxed mb-6">
+        <p className="text-xs sm:text-sm text-[#33343B] leading-relaxed mb-6">
           {context}
         </p>
       </div>
 
       {/* Link or LinkedIn indicator */}
       {link ? (
-        <div className="pt-4 border-t border-[#D9CAA8] flex items-center justify-between text-xs font-mono text-[#7F011F] hover:text-[#9B1832] transition-colors font-medium">
+        <div className="pt-4 border-t border-[#CECAB3] flex items-center justify-between text-xs font-mono text-[#282B4A] hover:text-[#3F4474] transition-colors font-medium">
           <span>View on LinkedIn</span>
-          <span className="text-[#7F011F]">↗</span>
+          <span className="text-[#282B4A]">↗</span>
         </div>
       ) : (
-        <div className="pt-4 border-t border-[#D9CAA8] text-[11px] font-mono text-[#6E5D61]">
+        <div className="pt-4 border-t border-[#CECAB3] text-[11px] font-mono text-[#60616B]">
           VERIFIED DEPARTMENT RECORD
         </div>
       )}

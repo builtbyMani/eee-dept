@@ -29,7 +29,7 @@ export default function FieldHorizontalRowsBg({
         <FieldHorizontalRows
           background="transparent"
           baseColor="transparent"
-          accentColor="#9B1832"
+          accentColor="#3F4474"
           speed={32}
           scale={42.5}
           hover={167}
@@ -79,8 +79,8 @@ export default function FieldHorizontalRowsBg({
       </div>
 
       {/* Gentle top & bottom fade so rows gracefully dissolve under the pill navbar and footer */}
-      <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#F5EBD0] to-transparent pointer-events-none" />
-      <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#F5EBD0] to-transparent pointer-events-none" />
+      <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#EEEBDA] to-transparent pointer-events-none" />
+      <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#EEEBDA] to-transparent pointer-events-none" />
     </div>
   );
 }

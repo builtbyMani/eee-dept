@@ -56,9 +56,9 @@ interface ElementalLightningProps {
 export default function ElementalLightning({
   children,
   className = "",
-  glowColor = "rgba(127, 1, 31, 0.7)",
-  sparkColor = "#FF4D6D",
-  coreColor = "#FFF5F7",
+  glowColor = "rgba(40, 43, 74, 0.7)",
+  sparkColor = "#7C81C4",
+  coreColor = "#FCFCF8",
 }: ElementalLightningProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -169,7 +169,7 @@ export default function ElementalLightning({
           life: 1,
           maxLife: 20 + Math.random() * 25,
           size: 1.5 + Math.random() * 2,
-          color: Math.random() > 0.4 ? "#FF4D6D" : "#FFF5F7",
+          color: Math.random() > 0.4 ? "#7C81C4" : "#FCFCF8",
         });
       }
     };
@@ -221,7 +221,7 @@ export default function ElementalLightning({
       if (activeArcs.length > 0) {
         // Outer Wine Red Glow pass
         ctx.save();
-        ctx.shadowColor = "#7F011F";
+        ctx.shadowColor = "#282B4A";
         ctx.shadowBlur = 18;
         ctx.strokeStyle = glowColor;
         ctx.lineCap = "round";
@@ -239,7 +239,7 @@ export default function ElementalLightning({
         // Crimson secondary glow
         ctx.save();
         ctx.strokeStyle = sparkColor;
-        ctx.shadowColor = "#FF4D6D";
+        ctx.shadowColor = "#7C81C4";
         ctx.shadowBlur = 8;
         ctx.lineCap = "round";
 

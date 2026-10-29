@@ -35,17 +35,17 @@ export default function ProjectCard({
       whileHover={{ y: -4 }}
       whileTap={{ scale: 0.985 }}
       transition={tactileSpring}
-      className="border-t border-[#D9CAA8] pt-4 pb-8 flex flex-col justify-between h-full group cursor-pointer text-left"
+      className="border-t border-[#CECAB3] pt-4 pb-8 flex flex-col justify-between h-full group cursor-pointer text-left"
     >
       <div>
         {/* Top Info Bar */}
         <div className="flex items-center justify-between text-xs font-mono uppercase tracking-wider mb-4">
-          <span className="text-[#181113] font-semibold">
+          <span className="text-[#121317] font-semibold">
             {paddedIndex} {name}
           </span>
-          <span className="text-[#6E5D61] flex items-center gap-2 font-medium">
+          <span className="text-[#60616B] flex items-center gap-2 font-medium">
             {highlightBadge && (
-              <span className="text-[#7F011F] border border-[#7F011F]/30 bg-[#7F011F]/10 px-1.5 py-0.5 text-[10px] font-semibold">
+              <span className="text-[#282B4A] border border-[#282B4A]/30 bg-[#282B4A]/10 px-1.5 py-0.5 text-[10px] font-semibold">
                 {highlightBadge}
               </span>
             )}
@@ -54,12 +54,12 @@ export default function ProjectCard({
         </div>
 
         {/* Visual Frame */}
-        <div className="relative aspect-[16/9] w-full border border-[#D9CAA8] bg-[#EFE3C3]/60 mb-5 overflow-hidden flex items-center justify-center p-6 group-hover:border-[#7F011F] transition-colors shadow-[0_4px_20px_rgba(70,30,40,0.04)]">
+        <div className="relative aspect-[16/9] w-full border border-[#CECAB3] bg-[#E6E2CC]/60 mb-5 overflow-hidden flex items-center justify-center p-6 group-hover:border-[#282B4A] transition-colors shadow-[0_4px_20px_rgba(38,40,62,0.04)]">
           <div
             className="absolute inset-0 opacity-[0.25]"
             style={{
               backgroundImage:
-                "linear-gradient(to right, #D9CAA8 1px, transparent 1px), linear-gradient(to bottom, #D9CAA8 1px, transparent 1px)",
+                "linear-gradient(to right, #CECAB3 1px, transparent 1px), linear-gradient(to bottom, #CECAB3 1px, transparent 1px)",
               backgroundSize: "24px 24px",
             }}
           />
@@ -75,18 +75,18 @@ export default function ProjectCard({
         </div>
 
         {/* Headline & Description */}
-        <h3 className="text-xl sm:text-2xl font-semibold text-[#181113] mb-2 leading-snug tracking-tight font-heading">
+        <h3 className="text-xl sm:text-2xl font-semibold text-[#121317] mb-2 leading-snug tracking-tight font-heading">
           {headline}
         </h3>
-        <p className="text-sm text-[#3E3033] leading-relaxed mb-6 line-clamp-3">
+        <p className="text-sm text-[#33343B] leading-relaxed mb-6 line-clamp-3">
           {description}
         </p>
       </div>
 
       {/* Action CTA */}
-      <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#7F011F] group-hover:text-[#9B1832] transition-colors font-semibold">
+      <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#282B4A] group-hover:text-[#3F4474] transition-colors font-semibold">
         <span>{isExternal ? "Visit Team Portal" : "Explore Machine & Team"}</span>
-        <span className="transition-transform group-hover:translate-x-1 text-[#7F011F]">
+        <span className="transition-transform group-hover:translate-x-1 text-[#282B4A]">
           {isExternal ? "↗" : "→"}
         </span>
       </div>
