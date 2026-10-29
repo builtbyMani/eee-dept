@@ -7,7 +7,6 @@ import HodSection from "@/components/ui/HodSection";
 import AchievementsShowcase from "@/components/ui/AchievementsShowcase";
 import Accordion from "@/components/ui/Accordion";
 import FieldHorizontalRowsBg from "@/components/ui/FieldHorizontalRowsBg";
-import ElementalLightning from "@/components/ui/ElementalLightning";
 import { openContactModal } from "@/components/ui/ContactModal";
 import { tactileSpring, settleSpring } from "@/components/motion/SpringPhysics";
 
@@ -83,18 +82,16 @@ export default function HomePage() {
                 </span>
               </motion.div>
 
-              {/* Elemental Lightning Heading */}
-              <ElementalLightning className="max-w-3xl mb-6">
-                <motion.h1
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ ...settleSpring, delay: 0.1 }}
-                  className="text-4xl sm:text-6xl lg:text-7xl font-normal text-[#181113] font-hero tracking-tight sm:tracking-tighter leading-[1.04]"
-                >
-                  We learn by building <br className="hidden sm:inline" />
-                  machines that work.
-                </motion.h1>
-              </ElementalLightning>
+              {/* Hero Main Heading */}
+              <motion.h1
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ ...settleSpring, delay: 0.1 }}
+                className="text-4xl sm:text-6xl lg:text-7xl font-normal text-[#181113] font-hero tracking-tight sm:tracking-tighter leading-[1.04] max-w-3xl mb-6"
+              >
+                We learn by building <br className="hidden sm:inline" />
+                machines that work.
+              </motion.h1>
 
               <motion.p
                 initial={{ opacity: 0, y: 16 }}
